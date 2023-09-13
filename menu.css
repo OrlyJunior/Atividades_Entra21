@@ -1,0 +1,81 @@
+body
+{
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.img1
+{
+    margin-left: 8px;
+}
+
+.display
+{
+    padding: 12px;
+    background-color: burlywood;
+    width: 100%;
+    display: flex;
+}
+
+.titulo
+{
+    color: whitesmoke;
+    font-size: 40px;
+    margin-left: 32px;
+    margin-top: 36px;
+}
+
+.primeiro
+{
+    border-radius: 12px;
+    padding: 4px;
+    color: burlywood;
+    justify-content: center;
+    height: 50%;
+    background-color: white;
+    line-height: 28px;
+    margin-bottom: 10px;
+}
+
+#hidden
+{
+    display: none;
+}
+
+.centro
+{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+a
+{
+    color: burlywood;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+#um:hover
+{
+    text-decoration: none;
+    background-color: burlywood;
+    color: whitesmoke;
+}
+
+.dois:hover
+{
+    background-color: burlywood;
+}
+
+.tres:hover
+{
+    background-color: burlywood;
+}
+
+.primeiro:hover #hidden
+{
+    display: flex;
+    flex-direction: column;
+}
