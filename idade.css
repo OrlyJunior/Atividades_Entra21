@@ -1,0 +1,27 @@
+body
+{
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: burlywood;
+    font-size: 20px;
+}
+
+.idade
+{
+    height: 20px;
+}
+
+.display
+{
+    justify-content: center;
+    padding: 12px;
+    background-color: burlywood;
+    width: 100%;
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.margin
+{
+    margin-left: 8px;
+}

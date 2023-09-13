@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="display">
+        <script src="navbar.js"></script>
+
+        <div class="centro">
+            <p class="titulo">Idade</p>
+        </div>
+    </div>
+
+    <div class="margin">
+        <label for="idade">Insira a sua idade: </label>
+        <input id="idade" class="idade" name="idade" type="number">
+
+        <p id="texto"></p>
+
+        <button onclick="idade()">Enviar</button>
+    </div>
+
+
+    <script>
+        function idade()
+        {
+            var input = document.getElementById("idade").value;
+            var texto = document.getElementById("texto");
+
+            if(input >= 18)
+            {
+                texto.innerHTML = "Você é maior de idade!";
+            }
+
+            if(input < 18)
+            {
+                texto.innerHTML = "Você é menor de idade!"
+            }
+        }
+    </script>
+</body>
+</html>

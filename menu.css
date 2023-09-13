@@ -19,6 +19,7 @@ body
 
 .titulo
 {
+    text-align: center;
     color: whitesmoke;
     font-size: 40px;
     margin-left: 32px;
@@ -27,10 +28,11 @@ body
 
 .primeiro
 {
+    width: 13%;
     border-radius: 12px;
     padding: 4px;
     color: burlywood;
-    justify-content: center;
+    justify-content: left;
     height: 50%;
     background-color: white;
     line-height: 28px;
