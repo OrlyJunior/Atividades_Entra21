@@ -5,5 +5,6 @@ document.write("<a id='um' href='atividade1.html'>Início</a>");
 document.write("<a id='um' href='idade.html'>Idade</a>");
 document.write("<a id='um' href='notas.html'>Notas</a>");
 document.write("<a id='um' href='imc.html'>IMC</a>");
+document.write("<a id='um' href='salario.html'>Salario</a>")
 document.write("</nav>");
 document.write("</div>");

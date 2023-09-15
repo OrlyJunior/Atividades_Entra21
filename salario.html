@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salario</title>
 </head>
+
 <body>
-    
+    <p>Aumento de Salário</p>
+    <script src="navbar.js"></script>
+
+    <p>Funcionários</p>
+
+        <p id="f1">Jonas</p>
+        
+        <label for="salario">Insira o salário do funcionário: </label>
+        <input id="salario" type="number">
+
+        <select name="jonas" id="jonas">
+            <option value="gerente">Gerente</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="operador">Operador</option>
+            <option value="outros">Outros colaboradores</option>
+        </select>
+
+        <p id="as">Salário antigo: </p>
+        <p id="aum">Aumento: </p>
+        <p id="ns">Novo salário: </p>
+        
+
+        <button onclick="calcular()">Aumentar salário</button>
+
+    <script>
+        function calcular() {
+            var s1 = parseInt(document.getElementById("salario").value);
+
+            var f1 = document.getElementsByName("jonas");
+
+            var um = f1[0];
+
+            var novoS = document.getElementById("ns");
+            var antS = document.getElementById("as");
+            var aumento = document.getElementById("aum");
+
+            antS.innerHTML = "Salário antigo: " + s1;
+
+            if (f1[0].value = "gerente") {
+                var s1N = s1 * 0.05;
+
+                var s1F = s1 + s1N;
+
+                aumento.innerHTML = "Aumento: 5%";
+                novoS.innerHTML = "Novo salário: " + s1F;
+            }
+
+            if (f1[1].checked) {
+                var s1N = s1 * 0.08;
+
+                var s1F = s1 + s1N;
+
+                aumento.innerHTML = "Aumento: 8%";
+                novoS.innerHTML = "Novo salário: " + s1F;
+            }
+
+            console.log(s1F);
+        }
+    </script>
 </body>
+
 </html>
