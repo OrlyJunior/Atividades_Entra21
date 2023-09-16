@@ -1,0 +1,111 @@
+#f1 {
+    background-color: rgb(229, 188, 135);
+    color: whitesmoke;
+    padding: 16px;
+    font-size: 24px;
+    width: 40%;
+    text-align: center;
+    width: 100%;
+    margin-top: 0px;
+    border-bottom: 1px solid black;
+    margin-bottom: 0px;
+}
+
+.margin2 {
+    margin-left: 8px;
+}
+
+option, select {
+    margin-top: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    padding: 2px;
+}
+
+.cargo
+{
+    margin-bottom: 8px;
+}
+
+#as
+{
+    margin-top: 0px;
+}
+
+.sal{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.marginSal
+{
+    border-bottom: 1px solid black;
+}
+
+.marginSC {
+    border-bottom: 1px solid black;
+}
+
+.salario {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#salario {
+    border: 1px solid gray;
+    border-radius: 12px;
+    padding: 4px;
+    font-size: 16x;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.botao
+{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.botao:hover .bgBotao
+{
+    background-color: rgb(216, 169, 108);
+}
+
+.bgBotao
+{
+    display: flex;
+    justify-content: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: burlywood;
+}
+
+.funcDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 35%;
+}
+
+.func {
+    padding: 4px;
+    background: linear-gradient(90deg, rgb(224, 182, 126) 0%, rgb(221, 167, 97) 50%, rgb(226, 154, 60) 100%);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    color: whitesmoke;
+    font-size: 24px;
+    text-align: center;
+}
+
+.border {
+    border-bottom: 1px solid black;
+    border-radius: 0px;
+    padding: 0px;
+    width: 100%;
+}

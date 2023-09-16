@@ -1,0 +1,13 @@
+input {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-top: 8px;
+}
+
+.imc {
+    margin-top: 52px;
+    text-align: center;
+    font-size: 32px;
+}
+

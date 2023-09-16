@@ -5,23 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMC</title>
+
+    <link rel="stylesheet" href="imc.css">
+    <link rel="stylesheet" href="menu.css">
 </head>
 
 <body>
-    <p>IMC</p>
 
-    <script src="navbar.js"></script>
+    <div class="display">
+        <script class="navbar" src="navbar.js"></script>
 
-    <label for="peso">Insira seu peso: </label>
-    <input placeholder="Insira sua altura (kg) ..." id="peso" type="number">
+        <div class="centro">
+            <p class="titulo">IMC</p>
+        </div>
+    </div>
 
-    <label for="altura">Insira sua altura: </label>
-    <input placeholder="Insita sua altura (cm) ..." id="altura" type="number">
 
-    <button onclick="calcular()">Calcular</button>
 
-    <p id="imc">Seu IMC é: </p>
-    <p id="texto"></p>
+
+    <div class="margin">
+        <label for="peso">Insira seu peso: </label>
+        <input placeholder="Insira sua altura (kg) ..." id="peso" type="number">
+
+        <label for="altura">Insira sua altura: </label>
+        <input placeholder="Insita sua altura (cm) ..." id="altura" type="number">
+
+        <button onclick="calcular()">Calcular</button>
+
+        <div class="imc">
+            <p id="imc">Descubra seu IMC. É só preencher os campos!</p>
+            <p id="texto"></p>
+        </div>
+    </div>
 
     <script>
         function calcular() {
@@ -35,38 +50,31 @@
             var imc = peso / altura3;
             document.getElementById("imc").innerHTML = "Seu IMC é: " + imc.toFixed(2);
 
-            if(imc < 17)
-            {
+            if (imc < 17) {
                 document.getElementById("texto").innerHTML = "Muito abaixo do peso";
             }
 
-            if(imc >= 17 && imc <= 18.49)
-            {
+            if (imc >= 17 && imc <= 18.49) {
                 document.getElementById("texto").innerHTML = "Abaixo do peso";
             }
 
-            if(imc >= 18.50 && imc <= 24.99)
-            {
+            if (imc >= 18.50 && imc <= 24.99) {
                 document.getElementById("texto").innerHTML = "Peso normal";
             }
 
-            if(imc >= 25 && imc <= 29.99)
-            {
+            if (imc >= 25 && imc <= 29.99) {
                 document.getElementById("texto").innerHTML = "Acima do peso";
             }
 
-            if(imc >= 30 && imc <= 34.99)
-            {
+            if (imc >= 30 && imc <= 34.99) {
                 document.getElementById("texto").innerHTML = "Obesidade I";
             }
 
-            if(imc >= 35 && imc <= 39.99)
-            {
+            if (imc >= 35 && imc <= 39.99) {
                 document.getElementById("texto").innerHTML = "Obesidade II (Severa)";
             }
 
-            if(imc > 40)
-            {
+            if (imc > 40) {
                 document.getElementById("texto").innerHTML = "Obesidade III (Mórbida)";
             }
         }

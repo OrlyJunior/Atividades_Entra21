@@ -5,32 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salario</title>
+
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="salario.css">
 </head>
 
 <body>
-    <p>Aumento de Salário</p>
-    <script src="navbar.js"></script>
+    <div class="display">
+        <script src="navbar.js"></script>
 
-    <p>Funcionários</p>
+        <div class="centro">
+            <p style="width: 30%;" class="titulo">Salário</p>
+        </div>
+    </div>
 
-    <p id="f1">Jonas</p>
+    <div class="margin">
+        <div class="card">
+            <div class="func">
+                <p>Funcionário</p>
+            </div>
 
-    <label for="salario">Insira o salário do funcionário: </label>
-    <input id="salario" type="number">
+            <div class="border"></div>
 
-    <select name="jonas" id="select">
-        <option id="gerente" value="gerente">Gerente</option>
-        <option id="supervisor" value="supervisor">Supervisor</option>
-        <option id="operador" value="operador">Operador</option>
-        <option id="outros" value="outros">Outros colaboradores</option>
-    </select>
-
-    <p id="as">Salário antigo: </p>
-    <p id="aum">Aumento: </p>
-    <p id="ns">Novo salário: </p>
+            <div class="funcDiv">
+                <p id="f1">Jonas</p>
+            </div>
 
 
-    <button onclick="calcular()">Aumentar salário</button>
+            <div class="marginSC">
+                <div class="marginSal">
+                    <div class="margin2">
+                        <div class="salario">
+
+                            <label for="salario">Insira o salário do funcionário: </label>
+                            <input id="salario" type="number">
+                        </div>
+
+                        <div class="cargo">
+                            <label for="select">Selecione o cargo do funcionário:</label>
+                            <select name="jonas" id="select">
+                                <option id="gerente" value="gerente">Gerente</option>
+                                <option id="supervisor" value="supervisor">Supervisor</option>
+                                <option id="operador" value="operador">Operador</option>
+                                <option id="outros" value="outros">Outros colaboradores</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sal">
+                    <p id="as">Salário antigo: </p>
+                    <p id="aum">Aumento: </p>
+                    <p id="ns">Novo salário: </p>
+                </div>
+            </div>
+
+            <div class="bgBotao">
+                    <button class="botao" onclick="calcular()">Aumentar salário</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         function calcular() {
@@ -51,7 +85,7 @@
                 var s1F = s1 + s1N;
 
                 aumento.innerHTML = "Aumento: 5%";
-                novoS.innerHTML = "Novo salário: " + s1F;
+                novoS.innerHTML = "Novo salário: R$" + s1F;
             }
 
             if (opcao == "supervisor") {
@@ -60,7 +94,7 @@
                 var s1F = s1 + s1N;
 
                 aumento.innerHTML = "Aumento: 8%";
-                novoS.innerHTML = "Novo salário: " + s1F;
+                novoS.innerHTML = "Novo salário: R$" + s1F;
             }
 
             if (opcao == "operador") {
@@ -69,7 +103,7 @@
                 var s1F = s1 + s1N;
 
                 aumento.innerHTML = "Aumento: 9%";
-                novoS.innerHTML = "Novo salário: " + s1F;
+                novoS.innerHTML = "Novo salário: R$" + s1F;
             }
 
             if (opcao == "outros") {
@@ -78,7 +112,7 @@
                 var s1F = s1 + s1N;
 
                 aumento.innerHTML = "Aumento: 10%";
-                novoS.innerHTML = "Novo salário: " + s1F;
+                novoS.innerHTML = "Novo salário: R$" + s1F;
             }
 
             console.log(opcao);

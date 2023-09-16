@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notas</title>
+
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="notas.css">
 </head>
 
 <body>
@@ -32,7 +35,7 @@
         <div id="NS">
             <p id="media">A média do aluno é: </p>
 
-            <p id="situacao"></p>
+            <p id="situacao">Situação: </p>
         </div>
 
         <button onclick="media()">Enviar</button>
@@ -51,14 +54,15 @@
             document.getElementById("media").innerHTML = "A média do aluno é:" + media.toFixed(2);
 
             if (media >= 7 && freq >= 75) {
-                document.getElementById("situacao").innerHTML = "Aprovado!";
+                document.getElementById("situacao").innerHTML = "Situação: Aprovado!";
             }
 
             if (media < 7 || freq < 75) {
-                document.getElementById("situacao").innerHTML = "Reprovado!";
+                document.getElementById("situacao").innerHTML = "Situação: Reprovado!";
             }
         }
 
     </script>
 </body>
+
 </html>

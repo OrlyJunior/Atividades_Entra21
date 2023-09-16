@@ -1,0 +1,12 @@
+input
+{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-top: 8px;
+}
+
+#NS
+{
+    margin-top: 36px;
+}

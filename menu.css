@@ -1,33 +1,49 @@
-body
-{
+body {
     margin: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.img1
-{
+.margin {
     margin-left: 8px;
 }
 
-.display
-{
+.img1 {
+    margin-left: 8px;
+}
+
+.display {
     padding: 12px;
     background-color: burlywood;
     width: 100%;
     display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+    justify-content: center;
 }
 
-.titulo
-{
-    text-align: center;
+button {
+    border-radius: 32px;
+    border: 0px;
+    padding: 12px;
+    font-size: 24px;
+    color: whitesmoke;
+    background-color: burlywood;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(216, 169, 108);
+}
+
+.titulo {
     color: whitesmoke;
     font-size: 40px;
     margin-left: 32px;
     margin-top: 36px;
+    width: 24%;
 }
 
-.primeiro
-{
+.primeiro {
     width: 13%;
     border-radius: 12px;
     padding: 4px;
@@ -39,45 +55,38 @@ body
     margin-bottom: 10px;
 }
 
-#hidden
-{
+#hidden {
     display: none;
 }
 
-.centro
-{
+.centro {
     width: 100%;
     justify-content: center;
     display: flex;
 }
 
-a
-{
+a {
     color: burlywood;
     text-decoration: none;
     border-radius: 8px;
     padding: 2px;
 }
 
-#um:hover
-{
+#um:hover {
     text-decoration: none;
     background-color: burlywood;
     color: whitesmoke;
 }
 
-.dois:hover
-{
+.dois:hover {
     background-color: burlywood;
 }
 
-.tres:hover
-{
+.tres:hover {
     background-color: burlywood;
 }
 
-.primeiro:hover #hidden
-{
+.primeiro:hover #hidden {
     display: flex;
     flex-direction: column;
 }
