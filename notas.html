@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+</head>
+
+<body>
+    <div class="display">
+        <script src="navbar.js"></script>
+
+        <div class="centro">
+            <p class="titulo">Notas</p>
+        </div>
+    </div>
+
+    <div class="margin">
+        <label for="nota1">Insira a primeira nota:</label>
+        <input id="nota1" class="idade" name="nota1" type="number">
+
+        <label for="nota2">Insira a segunda nota:</label>
+        <input id="nota2" class="idade" name="nota2" type="number">
+
+        <label for="nota3">Insira a terceira nota:</label>
+        <input id="nota3" class="idade" name="nota3" type="number">
+
+        <label for="frequencia">Insira a frequência do aluno:</label>
+        <input id="frequencia" class="idade" name="frequencia" type="number">
+
+        <div id="NS">
+            <p id="media">A média do aluno é: </p>
+
+            <p id="situacao"></p>
+        </div>
+
+        <button onclick="media()">Enviar</button>
+    </div>
+
+    <script>
+        function media() {
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+            var freq = document.getElementById("frequencia").value;
+            var situacao = document.getElementById("situacao");
+
+            var media = (nota1 + nota2 + nota3) / 3;
+
+            document.getElementById("media").innerHTML = "A média do aluno é:" + media.toFixed(2);
+
+            if (media >= 7 && freq >= 75) {
+                document.getElementById("situacao").innerHTML = "Aprovado!";
+            }
+
+            if (media < 7 || freq < 75) {
+                document.getElementById("situacao").innerHTML = "Reprovado!";
+            }
+        }
+
+    </script>
+</body>
+</html>

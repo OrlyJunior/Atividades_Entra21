@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+
+<body>
+    <p>IMC</p>
+
+    <script src="navbar.js"></script>
+
+    <label for="peso">Insira seu peso: </label>
+    <input placeholder="Insira sua altura (kg) ..." id="peso" type="number">
+
+    <label for="altura">Insira sua altura: </label>
+    <input placeholder="Insita sua altura (cm) ..." id="altura" type="number">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="imc">Seu IMC é: </p>
+    <p id="texto"></p>
+
+    <script>
+        function calcular() {
+            var peso = parseFloat(document.getElementById("peso").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+
+            var altura2 = altura / 100;
+
+            var altura3 = altura2 * altura2;
+
+            var imc = peso / altura3;
+            document.getElementById("imc").innerHTML = "Seu IMC é: " + imc.toFixed(2);
+
+            if(imc < 17)
+            {
+                document.getElementById("texto").innerHTML = "Muito abaixo do peso";
+            }
+
+            if(imc >= 17 && imc <= 18.49)
+            {
+                document.getElementById("texto").innerHTML = "Abaixo do peso";
+            }
+
+            if(imc >= 18.50 && imc <= 24.99)
+            {
+                document.getElementById("texto").innerHTML = "Peso normal";
+            }
+
+            if(imc >= 25 && imc <= 29.99)
+            {
+                document.getElementById("texto").innerHTML = "Acima do peso";
+            }
+
+            if(imc >= 30 && imc <= 34.99)
+            {
+                document.getElementById("texto").innerHTML = "Obesidade I";
+            }
+
+            if(imc >= 35 && imc <= 39.99)
+            {
+                document.getElementById("texto").innerHTML = "Obesidade II (Severa)";
+            }
+
+            if(imc > 40)
+            {
+                document.getElementById("texto").innerHTML = "Obesidade III (Mórbida)";
+            }
+        }
+    </script>
+</body>
+
+</html>

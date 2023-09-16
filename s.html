@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="marcas" id="marcas">
+        <option value="ford">Ford</option>
+        <option value="VW">VW</option>
+        <option value="ferrari" selected>Ferrari</option>
+      </select>
+    <script>
+    var select = document.getElementById("marcas");
+        var opcaoTexto = select.options[select.selectedIndex].text;
+        var opcaoValor = select.options[select.selectedIndex].value;
+        console.log(opcaoTexto); // Ferrari
+        console.log(opcaoValor); // ferrari
+        </script>
+    
+</body>
+</html>
