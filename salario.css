@@ -15,30 +15,28 @@
     margin-left: 8px;
 }
 
-option, select {
+option,
+select {
     margin-top: 4px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     padding: 2px;
 }
 
-.cargo
-{
+.cargo {
     margin-bottom: 8px;
 }
 
-#as
-{
+#as {
     margin-top: 0px;
 }
 
-.sal{
+.sal {
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
-.marginSal
-{
+.marginSal {
     border-bottom: 1px solid black;
 }
 
@@ -51,7 +49,7 @@ option, select {
     margin-bottom: 8px;
 }
 
-#salario {
+input {
     border: 1px solid gray;
     border-radius: 12px;
     padding: 4px;
@@ -59,26 +57,28 @@ option, select {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.botao
-{
+.botao {
     margin-top: 8px;
     margin-bottom: 8px;
     width: 100%;
     border-radius: 20px;
 }
 
-.botao:hover .bgBotao
-{
+.botao:hover .bgBotao {
     background-color: rgb(216, 169, 108);
 }
 
-.bgBotao
-{
+.bgBotao {
     display: flex;
+    justify-content: space-around;
     justify-content: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: burlywood;
+}
+
+.marginSalario {
+    margin-left: 8px;
 }
 
 .funcDiv {
@@ -87,10 +87,47 @@ option, select {
     justify-content: center;
 }
 
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 4px;
+}
+
+
 .card {
     border: 1px solid black;
     border-radius: 20px;
     width: 35%;
+    display: none;
+    box-shadow: 10px 10px 29px -1px rgba(0, 0, 0, 0.75);
+}
+
+.card2 {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 35%;
+    display: block;
+    box-shadow: 10px 10px 29px -1px rgba(0, 0, 0, 0.75);
+}
+
+.flex {
+    display: flex;
+}
+
+.lista {
+    display: flex;
+    margin-left: 20px;
+}
+
+.nomeButton {
+    font-size: 24px;
+    padding: 8px;
+}
+
+.inicio {
+    margin-bottom: 8px;
 }
 
 .func {
@@ -108,4 +145,5 @@ option, select {
     border-radius: 0px;
     padding: 0px;
     width: 100%;
+
 }

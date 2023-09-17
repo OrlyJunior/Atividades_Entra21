@@ -19,54 +19,80 @@
         </div>
     </div>
 
-    <div class="margin">
-        <div class="card">
-            <div class="func">
-                <p>Funcionário</p>
-            </div>
 
-            <div class="border"></div>
+    <div class="marginSalario">
+        <div class="inicio">
+            <label for="nomeF">Insira o nome do funcionário: </label>
+            <input placeholder="Insira o nome..." id="nomeF" type="text">
 
-            <div class="funcDiv">
-                <p id="f1">Jonas</p>
-            </div>
+            <button class="nomeButton" onclick="addFunc()">Confirmar o nome</button>
+        </div>
+        <div class="flex">
+            <div id="card" class="card">
+                <div class="func">
+                    <p>Funcionário</p>
+                </div>
+
+                <div class="border"></div>
+
+                <div class="funcDiv">
+                    <p id="f1"></p>
+                </div>
 
 
-            <div class="marginSC">
-                <div class="marginSal">
-                    <div class="margin2">
-                        <div class="salario">
+                <div class="marginSC">
+                    <div class="marginSal">
+                        <div class="margin2">
+                            <div class="salario">
+                                <label for="salario">Insira o salário do funcionário: </label>
+                                <input placeholder="Insira o salário..." id="salario" type="number">
+                            </div>
 
-                            <label for="salario">Insira o salário do funcionário: </label>
-                            <input id="salario" type="number">
+                            <div class="cargo">
+                                <label for="select">Selecione o cargo do funcionário:</label>
+                                <select name="jonas" id="select">
+                                    <option id="gerente" value="gerente">Gerente</option>
+                                    <option id="supervisor" value="supervisor">Supervisor</option>
+                                    <option id="operador" value="operador">Operador</option>
+                                    <option id="outros" value="outros">Outros colaboradores</option>
+                                </select>
+                            </div>
                         </div>
+                    </div>
 
-                        <div class="cargo">
-                            <label for="select">Selecione o cargo do funcionário:</label>
-                            <select name="jonas" id="select">
-                                <option id="gerente" value="gerente">Gerente</option>
-                                <option id="supervisor" value="supervisor">Supervisor</option>
-                                <option id="operador" value="operador">Operador</option>
-                                <option id="outros" value="outros">Outros colaboradores</option>
-                            </select>
+                    <div class="sal">
+                        <div class="margin2">
+                            <p id="as">Salário antigo: </p>
+                            <p id="aum">Aumento: </p>
+                            <p id="ns">Novo salário: </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="sal">
-                    <p id="as">Salário antigo: </p>
-                    <p id="aum">Aumento: </p>
-                    <p id="ns">Novo salário: </p>
+                <div class="bgBotao">
+                    <button class="botao" onclick="calcular()">Aumentar salário</button>
                 </div>
             </div>
 
-            <div class="bgBotao">
-                    <button class="botao" onclick="calcular()">Aumentar salário</button>
+            <div id="lista" class="lista">
+
             </div>
         </div>
     </div>
 
+
     <script>
+        function addFunc() {
+            var nomeFunc = document.getElementById("nomeF").value;
+            document.getElementById("f1").innerHTML = nomeFunc;
+
+            var card = document.getElementById("card");
+            card.classList.remove("card");
+            card.classList.add("card2");
+
+            localStorage.setItem("nome", nomeFunc);
+        }
+
         function calcular() {
             var s1 = parseInt(document.getElementById("salario").value);
 
@@ -77,15 +103,17 @@
             var select = document.getElementById("select");
             var opcao = select.options[select.selectedIndex].value;
 
-            antS.innerHTML = "Salário antigo: " + s1;
+            antS.innerHTML = "Salário antigo: R$" + s1.toFixed(2);
 
             if (opcao == "gerente") {
                 var s1N = s1 * 0.05;
 
                 var s1F = s1 + s1N;
 
-                aumento.innerHTML = "Aumento: 5%";
-                novoS.innerHTML = "Novo salário: R$" + s1F;
+                var aumentoV = "5%";
+
+                aumento.innerHTML = "Aumento: " + aumentoV;
+                novoS.innerHTML = "Novo salário: R$" + s1F.toFixed(2);
             }
 
             if (opcao == "supervisor") {
@@ -93,8 +121,10 @@
 
                 var s1F = s1 + s1N;
 
-                aumento.innerHTML = "Aumento: 8%";
-                novoS.innerHTML = "Novo salário: R$" + s1F;
+                var aumentoV = "8%";
+
+                aumento.innerHTML = "Aumento: " + aumentoV;
+                novoS.innerHTML = "Novo salário: R$" + s1F.toFixed(2);
             }
 
             if (opcao == "operador") {
@@ -102,8 +132,10 @@
 
                 var s1F = s1 + s1N;
 
-                aumento.innerHTML = "Aumento: 9%";
-                novoS.innerHTML = "Novo salário: R$" + s1F;
+                var aumentoV = "9%";
+
+                aumento.innerHTML = "Aumento: " + aumentoV;
+                novoS.innerHTML = "Novo salário: R$" + s1F.toFixed(2);
             }
 
             if (opcao == "outros") {
@@ -111,11 +143,20 @@
 
                 var s1F = s1 + s1N;
 
-                aumento.innerHTML = "Aumento: 10%";
-                novoS.innerHTML = "Novo salário: R$" + s1F;
+                var aumentoV = "10%";
+
+                aumento.innerHTML = "Aumento: " + aumentoV;
+                novoS.innerHTML = "Novo salário: R$" + s1F.toFixed(2);
             }
 
-            console.log(opcao);
+            var nomeFunc = document.getElementById("f1").textContent;
+
+            var lista = document.getElementById("lista");
+
+            var fimCard = document.getElementById("card");
+            var insert = "<p>" + nomeFunc + " teve um aumento de " + aumentoV + ". Seu salário era de R$" + s1.toFixed(2) + ", e agora é de R$" + s1F.toFixed(2) + ".";
+
+            lista.insertAdjacentHTML("afterbegin", insert);
         }
     </script>
 </body>

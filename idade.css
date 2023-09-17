@@ -1,27 +1,15 @@
-body
-{
-    margin: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: burlywood;
-    font-size: 20px;
+.idade {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 150px;
 }
 
-.idade
-{
-    height: 20px;
+.texto {
+    margin-top: 170px;
+    text-align: center;
+    font-size: 32px;
 }
 
-.display
-{
-    justify-content: center;
-    padding: 12px;
-    background-color: burlywood;
-    width: 100%;
-    display: flex;
-    margin-bottom: 12px;
-}
-
-.margin
-{
-    margin-left: 8px;
+.block {
+    display: block;
 }

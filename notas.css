@@ -1,12 +1,36 @@
-input
-{
+body {
+    overflow-y: hidden;
+}
+
+input {
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     margin-top: 8px;
 }
 
-#NS
-{
+.flex {
+    width: 2200px;
+    display: flex;
+    flex-direction: row;
+}
+
+#NS {
     margin-top: 36px;
+}
+
+.divImg {
+    width: 100%;
+    margin-left: px;
+}
+
+img {
+    width: 150px;
+    margin-left: 8%;
+    margin-top: 3%;
+    width: 350px;
+}
+
+.media {
+    margin-top: 0px;
 }

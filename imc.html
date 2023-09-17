@@ -25,10 +25,10 @@
 
     <div class="margin">
         <label for="peso">Insira seu peso: </label>
-        <input placeholder="Insira sua altura (kg) ..." id="peso" type="number">
+        <input placeholder="Insira sua altura (kg) ..." id="peso" type="text">
 
         <label for="altura">Insira sua altura: </label>
-        <input placeholder="Insita sua altura (cm) ..." id="altura" type="number">
+        <input placeholder="Insita sua altura (cm) ..." id="altura" type="text">
 
         <button onclick="calcular()">Calcular</button>
 
@@ -43,11 +43,19 @@
             var peso = parseFloat(document.getElementById("peso").value);
             var altura = parseFloat(document.getElementById("altura").value);
 
+            var pesoV = document.getElementById("peso");
+            var alturaV = document.getElementById("altura");
+
+            
+
             var altura2 = altura / 100;
 
             var altura3 = altura2 * altura2;
 
             var imc = peso / altura3;
+
+            
+
             document.getElementById("imc").innerHTML = "Seu IMC é: " + imc.toFixed(2);
 
             if (imc < 17) {
@@ -77,6 +85,21 @@
             if (imc > 40) {
                 document.getElementById("texto").innerHTML = "Obesidade III (Mórbida)";
             }
+
+            if (pesoV == 0 || alturaV == 0)
+            {
+                alert("Você deve preencher os campos!");
+                return;
+            }
+
+            if (altura < 0 || peso < 0)
+            {
+                alert("Os valores não podem ser menores do que 0!");
+                return;
+            }
+
+            console.log(peso)
+            console.log(altura)
         }
     </script>
 </body>

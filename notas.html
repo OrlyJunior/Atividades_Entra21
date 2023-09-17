@@ -19,45 +19,77 @@
         </div>
     </div>
 
-    <div class="margin">
-        <label for="nota1">Insira a primeira nota:</label>
-        <input id="nota1" class="idade" name="nota1" type="number">
+    <div class="flex">
+        <div class="margin">
+            <div>
+                <label for="nota1">Insira a primeira nota:</label>
+                <input placeholder="Insira a primeira nota..." id="nota1" class="idade" name="nota1" type="number">
 
-        <label for="nota2">Insira a segunda nota:</label>
-        <input id="nota2" class="idade" name="nota2" type="number">
+                <label for="nota2">Insira a segunda nota:</label>
+                <input placeholder="Insira a segunda nota..." id="nota2" class="idade" name="nota2" type="number">
 
-        <label for="nota3">Insira a terceira nota:</label>
-        <input id="nota3" class="idade" name="nota3" type="number">
+                <label for="nota3">Insira a terceira nota:</label>
+                <input placeholder="Insira a terceira nota..." id="nota3" class="idade" name="nota3" type="number">
 
-        <label for="frequencia">Insira a frequência do aluno:</label>
-        <input id="frequencia" class="idade" name="frequencia" type="number">
+                <label for="frequencia">Insira a frequência do aluno:</label>
+                <input placeholder="Insira a frequência..." id="frequencia" class="idade" name="frequencia" type="number">
 
-        <div id="NS">
-            <p id="media">A média do aluno é: </p>
+                <div id="NS">
+                    <p class="media" id="media">A média do aluno é: </p>
 
-            <p id="situacao">Situação: </p>
+                    <p id="situacao">Situação: </p>
+                </div>
+
+                <div>
+                    <button onclick="media()">Enviar</button>
+                </div>
+            </div>
         </div>
-
-        <button onclick="media()">Enviar</button>
+        <div class="divImg">
+            <img id="imagem" src="" width="150px">
+        </div>
     </div>
+
+
 
     <script>
         function media() {
             var nota1 = parseFloat(document.getElementById("nota1").value);
             var nota2 = parseFloat(document.getElementById("nota2").value);
             var nota3 = parseFloat(document.getElementById("nota3").value);
+
             var freq = document.getElementById("frequencia").value;
+
             var situacao = document.getElementById("situacao");
 
+            var imagem = document.getElementById("imagem");
+
             var media = (nota1 + nota2 + nota3) / 3;
+
+            if (nota1 === "" || nota2 === "" || nota3 === "" || freq === "") {
+                alert("Todos os campos devem ser preenchidos!");
+                return;
+            }
+
+            if (nota1 > 10 || nota2 > 10 || nota3 > 10 || nota1 < 0 || nota2 < 0 || nota3 < 0) {
+                alert("As notas devem ir de 0 a 10!");
+                return;
+            }
+
+            if (freq < 0 || freq > 100) {
+                alert("A frequência deve ir de 0 a 100!");
+                return;
+            }
 
             document.getElementById("media").innerHTML = "A média do aluno é:" + media.toFixed(2);
 
             if (media >= 7 && freq >= 75) {
+                imagem.src = "./Imagens/feliz2.png";
                 document.getElementById("situacao").innerHTML = "Situação: Aprovado!";
             }
 
             if (media < 7 || freq < 75) {
+                imagem.src = "./Imagens/triste.png";
                 document.getElementById("situacao").innerHTML = "Situação: Reprovado!";
             }
         }
