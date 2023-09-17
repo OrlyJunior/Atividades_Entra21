@@ -78,7 +78,7 @@ input {
 }
 
 .marginSalario {
-    margin-left: 8px;
+    margin-left: 16px;
 }
 
 .funcDiv {
@@ -117,7 +117,6 @@ td {
 }
 
 .lista {
-    display: flex;
     margin-left: 20px;
 }
 

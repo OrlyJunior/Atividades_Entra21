@@ -85,11 +85,13 @@
 
             if (media >= 7 && freq >= 75) {
                 imagem.src = "./Imagens/feliz2.png";
+                imagem.classList.add("imagem");
                 document.getElementById("situacao").innerHTML = "Situação: Aprovado!";
             }
 
             if (media < 7 || freq < 75) {
                 imagem.src = "./Imagens/triste.png";
+                imagem.classList.add("imagem");
                 document.getElementById("situacao").innerHTML = "Situação: Reprovado!";
             }
         }

@@ -86,15 +86,25 @@
             var nomeFunc = document.getElementById("nomeF").value;
             document.getElementById("f1").innerHTML = nomeFunc;
 
+            localStorage.setItem("nome", nomeFunc);
+
+            if (nomeFunc === "") {
+                alert("Você deve informar o nome do funcionário!");
+                return;
+            }
+
             var card = document.getElementById("card");
             card.classList.remove("card");
             card.classList.add("card2");
-
-            localStorage.setItem("nome", nomeFunc);
         }
 
         function calcular() {
             var s1 = parseInt(document.getElementById("salario").value);
+
+            if (isNaN(s1)) {
+                alert("Você deve informar o salário do funcionário!");
+                return;
+            }
 
             var novoS = document.getElementById("ns");
             var antS = document.getElementById("as");
@@ -160,5 +170,4 @@
         }
     </script>
 </body>
-
 </html>

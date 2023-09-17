@@ -21,14 +21,33 @@ input {
 
 .divImg {
     width: 100%;
-    margin-left: px;
 }
 
-img {
-    width: 150px;
-    margin-left: 8%;
+@keyframes imagem {
+    0% {
+        width: 350px;
+        height: 350px;
+    }
+
+    50% {
+        width: 250px;
+        height: 250px;
+    }
+
+    100% {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+.imagem {
+    position: sticky;
+    margin-left: 18%;
     margin-top: 3%;
     width: 350px;
+    animation-name: imagem;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 
 .media {

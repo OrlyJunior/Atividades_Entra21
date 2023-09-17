@@ -43,18 +43,15 @@
             var peso = parseFloat(document.getElementById("peso").value);
             var altura = parseFloat(document.getElementById("altura").value);
 
-            var pesoV = document.getElementById("peso");
-            var alturaV = document.getElementById("altura");
-
-            
+            if (isNaN(peso) || isNaN(altura)) {
+                alert("Todos os campos devem ser preenchidos!");
+                return;
+            }
 
             var altura2 = altura / 100;
-
             var altura3 = altura2 * altura2;
 
             var imc = peso / altura3;
-
-            
 
             document.getElementById("imc").innerHTML = "Seu IMC é: " + imc.toFixed(2);
 
@@ -86,14 +83,12 @@
                 document.getElementById("texto").innerHTML = "Obesidade III (Mórbida)";
             }
 
-            if (pesoV == 0 || alturaV == 0)
-            {
+            if (pesoV == 0 || alturaV == 0) {
                 alert("Você deve preencher os campos!");
                 return;
             }
 
-            if (altura < 0 || peso < 0)
-            {
+            if (altura < 0 || peso < 0) {
                 alert("Os valores não podem ser menores do que 0!");
                 return;
             }

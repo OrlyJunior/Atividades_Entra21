@@ -4,6 +4,11 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@keyframes imagem {
+    from {rotate: 0deg;}
+    to {rotate: 360deg;}
+}
+
 .margin {
     margin-left: 8px;
     margin-bottom: 20px;
@@ -22,8 +27,12 @@ footer {
 }
 
 .imagem {
+    rotate: 0deg;
+    animation-name: imagem;
+    animation-duration: 4s;
     margin: auto;
     display: block;
+    animation-iteration-count: infinite;
 }
 
 .footerText {
