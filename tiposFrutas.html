@@ -29,10 +29,10 @@
         <p>Frutas: </p>
 
         <ul class="list-group mb-2">
-            <li class="list-group-item">Frutas</li>
+            <li class="list-group-item list-group-item-action list-group-item-primary">Frutas</li>
         </ul>
 
-        <table class="table">
+        <table class="table table-hover">
             <tr>
                 <th class="table-primary">Frutas</th>
             </tr>
@@ -40,32 +40,100 @@
     </div>
 
     <script>
+        var p = [];
+        var list = [];
+        var table = [];
+
         function lista() {
+            var input2 = document.getElementById("fruta");
             var input = document.getElementById("fruta").value;
 
+            if (input == "")
+            {
+                alert("Você deve preencher o campo!");
+                return;
+            }
+
+            for(var i = 0; i < list.length; i++)
+            { 
+                if(list[i] == input)
+                {
+                    alert("Você não pode inserir uma fruta duplicada!");
+                    return;
+                }
+            }
+
+            list.unshift(input);
+
             var ref = document.getElementsByTagName("li")[0];
-            ref.insertAdjacentHTML("afterend", `<li class="list-group-item">${input}</li>`);
+            ref.insertAdjacentHTML("afterend", `<li class="list-group-item-action list-group-item">${input}</li>`);
+
+
+
+            input2.value = "";
+            input2.focus();
         }
 
         function paragrafo() {
+            var input2 = document.getElementById("fruta");
             var input = document.getElementById("fruta").value;
 
             var ref = document.getElementsByTagName("p")[0];
+
+            if (input == "")
+            {
+                alert("Você deve preencher o campo!");
+                return;
+            }
+
+            for(var i = 0; i < p.length; i++)
+            { 
+                if(p[i] == input)
+                {
+                    alert("Você não pode inserir uma fruta duplicada!");
+                    return;
+                }
+            }
 
             if (ref.innerHTML == "Frutas: ") {
                 ref.innerHTML += `${input}`;
             } else {
                 ref.innerHTML += `, ${input}`;
             }
+
+            p.unshift(input);
+
+            input2.value = "";
+            input2.focus();
         }
 
         function tabela() {
+            var input2 = document.getElementById("fruta");
             var input = document.getElementById("fruta").value;
+
+            if (input == "")
+            {
+                alert("Você deve preencher o campo!");
+                return;
+            }
+
+            for(var i = 0; i < table.length; i++)
+            { 
+                if(table[i] == input)
+                {
+                    alert("Você não pode inserir uma fruta duplicada!");
+                    return;
+                }
+            }
+
+            table.unshift(input);
 
             var ref = document.getElementsByTagName("tr")[0];
             ref.insertAdjacentHTML("afterend", `<tr><td>${input}</td></tr>`);
+
+            input2.value = "";
+            input2.focus();
         }
     </script>
 </body>
-
 </html>
