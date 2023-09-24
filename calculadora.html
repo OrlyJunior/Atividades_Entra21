@@ -14,45 +14,44 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
-<<<<<<< HEAD
-    <div class="shadow p-3 mb-5 rounded m-2 bg-dark" style="width: 10%;">
+<body class="d-flex justify-content-center">
+    <div class="shadow p-3 mb-5 rounded m-2 bg-dark" style="width: 15%;">
         <div class="text-center bg-white rounded">
-            Calculadora
+            <p class="p-1">Calculadora</p>
         </div>
 
         <div class="d-flex justify-content-between m-2">
-                <button class="btn btn-light" onclick="um()">1</button>
-                <button class="btn btn-light" onclick="dois()">2</button>
-                <button class="btn btn-light" onclick="tres()">3</button>
+            <button class="btn btn-light" onclick="add(this)">1</button>
+            <button class="btn btn-light" onclick="add(this)">2</button>
+            <button class="btn btn-light" onclick="add(this)">3</button>
         </div>
         <div class="d-flex justify-content-between m-2">
-            <button class="btn btn-light" onclick="quatro()">4</button>
-            <button class="btn btn-light" onclick="cinco()">5</button>
-            <button class="btn btn-light" onclick="seis()">6</button>
+            <button class="btn btn-light" onclick="add(this)">4</button>
+            <button class="btn btn-light" onclick="add(this)">5</button>
+            <button class="btn btn-light" onclick="add(this)">6</button>
         </div>
         <div class="d-flex justify-content-between m-2">
-            <button class="btn btn-light" onclick="sete()">7</button>
-            <button class="btn btn-light" onclick="oito()">8</button>
-            <button class="btn btn-light" onclick="nove()">9</button>
+            <button class="btn btn-light" onclick="add(this)">7</button>
+            <button class="btn btn-light" onclick="add(this)">8</button>
+            <button class="btn btn-light" onclick="add(this)">9</button>
         </div>
         <div class="d-flex justify-content-center mb-4 m-2">
-            <button class="btn btn-light" onclick="zero()">0</button>
+            <button class="btn btn-light" onclick="add(this)">0</button>
         </div>
         <div class="d-flex justify-content-between m-2">
-            <button class="btn btn-light" onclick="adicao()">+</button>
-            <button class="btn btn-light" onclick="subtracao()">-</button>
-            <button class="btn btn-light" onclick="multiplicacao()">x</button>
+            <button class="btn btn-light" onclick="operacao(this)">+</button>
+            <button class="btn btn-light" onclick="operacao(this)">-</button>
+            <button class="btn btn-light" onclick="operacao(this)">x</button>
         </div>
-        <div class="d-flex justify-content-between m-2">
-            <button class="btn btn-light" onclick="divisao()">/</button>
-
+        <div class="d-flex m-2 justify-content-between">
+            <button class="btn btn-light" onclick="operacao(this)">/</button>
+            <button class="btn btn-light" onclick="limpar()">C</button>
             <button class="btn btn-light" onclick="realizarOperação()">=</button>
         </div>
 
-
-        <p class="text-white m-1 border-bottom border-white" id="resultado">0</p>
-        <p class="text-white m-1" id="r">0</p>
+        <div class="rounded bg-white">
+            <p class="text-dark p-1 m-1" id="resultado">0</p>
+        </div>
     </div>
 
     <script>
@@ -61,172 +60,31 @@
         var valorDois = 0;
         var display = document.getElementById("resultado");
         var result = document.getElementById("r");
-        var conta = `${valorUm} ${sinal} ${valorDois}`;
+        var conta = `${valorUm}`;
 
-        function zero() {
-            conta = `${valorUm} ${sinal} ${valorDois}`;
+        function add(n) {
+            var numero = 0;
+            var numero = parseFloat(n.innerHTML);
 
-            if (conta.includes("+") || conta.includes("-") || conta.includes("x") || conta.includes("/")) {
+            if (sinal != "") {
                 valorDois = valorDois * 10;
-                valorDois += 0;
+                valorDois += numero;
+
+                conta = `${valorUm} ${sinal} ${valorDois}`
             } else {
                 valorUm = valorUm * 10;
-                valorUm += 0;
-            }
+                valorUm += numero;
 
-            conta = `${valorUm} ${sinal} ${valorDois}`;
+                conta = `${valorUm}`;
+            }
 
             display.innerHTML = `${conta}`
         }
 
-        function um() {
-            conta = `${valorUm} ${sinal} ${valorDois}`;
+        function operacao(operacao) {
+            sinal = operacao.innerHTML;
 
-            if (conta.includes("+") || conta.includes("-") || conta.includes("x") || conta.includes("/")) {
-                valorDois = valorDois * 10;
-                valorDois += 1;
-            } else {
-                valorUm = valorUm * 10;
-                valorUm += 1;
-            }
-
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            display.innerHTML = `${conta}`
-        }
-
-        function dois() {
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            if (conta.includes("+") || conta.includes("-") || conta.includes("x") || conta.includes("/")) {
-                valorDois = valorDois * 10;
-                valorDois += 2;
-            } else {
-                valorUm = valorUm * 10;
-                valorUm += 2;
-            }
-
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            display.innerHTML = `${conta}`
-        }
-
-        function tres() {
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            if (conta.includes("+") || conta.includes("-") || conta.includes("x") || conta.includes("/")) {
-                valorDois = valorDois * 10;
-                valorDois += 3;
-            } else {
-                valorUm = valorUm * 10;
-                valorUm += 3;
-            }
-
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            display.innerHTML = `${conta}`
-        }
-
-        function quatro() {
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            if (conta.includes("+") || conta.includes("-") || conta.includes("x") || conta.includes("/")) {
-                valorDois = valorDois * 10;
-                valorDois += 4;
-            } else {
-                valorUm = valorUm * 10;
-                valorUm += 4;
-            }
-
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            display.innerHTML = `${conta}`
-        }
-
-        function cinco() {
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            if (conta.includes("+") || conta.includes("-") || conta.includes("x") || conta.includes("/")) {
-                valorDois = valorDois * 10;
-                valorDois += 5;
-            } else {
-                valorUm = valorUm * 10;
-                valorUm += 5;
-            }
-
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            display.innerHTML = `${conta}`
-        }
-
-        function seis() {
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            if (conta.includes("+") || conta.includes("-") || conta.includes("x") || conta.includes("/")) {
-                valorDois = valorDois * 10;
-                valorDois += 6;
-            } else {
-                valorUm = valorUm * 10;
-                valorUm += 6;
-            }
-
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            display.innerHTML = `${conta}`
-        }
-
-        function sete() {
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            if (conta.includes("+") || conta.includes("-") || conta.includes("x") || conta.includes("/")) {
-                valorDois = valorDois * 10;
-                valorDois += 7;
-            } else {
-                valorUm = valorUm * 10;
-                valorUm += 7;
-            }
-
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            display.innerHTML = `${conta}`
-        }
-
-        function oito() {
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            if (conta.includes("+") || conta.includes("-") || conta.includes("x") || conta.includes("/")) {
-                valorDois = valorDois * 10;
-                valorDois += 8;
-            } else {
-                valorUm = valorUm * 10;
-                valorUm += 8;
-            }
-
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            display.innerHTML = `${conta}`
-        }
-
-        function nove() {
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            if (conta.includes("+") || conta.includes("-") || conta.includes("x") || conta.includes("/")) {
-                valorDois = valorDois * 10;
-                valorDois += 9;
-            } else {
-                valorUm = valorUm * 10;
-                valorUm += 9;
-            }
-
-            conta = `${valorUm} ${sinal} ${valorDois}`;
-
-            display.innerHTML = `${conta}`
-        }
-
-        function adicao() {
-            sinal = "+";
-
-            conta = `${valorUm} ${sinal} ${valorDois}`;
+            conta = `${valorUm} ${sinal}`;
 
             display.innerHTML = `${conta}`;
         }
@@ -234,7 +92,7 @@
         function subtracao() {
             sinal = "-";
 
-            var conta = `${valorUm} ${sinal} ${valorDois}`;
+            var conta = `${valorUm} ${sinal}`;
 
             display.innerHTML = `${conta}`;
         }
@@ -242,7 +100,7 @@
         function multiplicacao() {
             sinal = "x";
 
-            var conta = `${valorUm} ${sinal} ${valorDois}`;
+            var conta = `${valorUm} ${sinal}`;
 
             display.innerHTML = `${conta}`;
         }
@@ -250,7 +108,7 @@
         function divisao() {
             sinal = "/";
 
-            var conta = `${valorUm} ${sinal} ${valorDois}`;
+            var conta = `${valorUm} ${sinal}`;
 
             display.innerHTML = `${conta}`;
         }
@@ -258,80 +116,44 @@
         function realizarOperação() {
             if (sinal == "+") {
                 var resultado = valorUm + valorDois;
-
-                result.innerHTML = `${resultado}`;
-
-                return;
             }
 
             if (sinal == "-") {
                 var resultado = valorUm - valorDois;
-
-                result.innerHTML = `${resultado}`
-
-                return;
             }
 
             if (sinal == "x") {
                 var resultado = valorUm * valorDois;
-
-                result.innerHTML = `${resultado}`
-
-                return;
             }
 
 
             if (sinal == "/") {
                 var resultado = valorUm / valorDois;
-
-                result.innerHTML = `${resultado}`
-
-                return;
             }
-        }
-=======
-    <div style="width: 10%;">
-        <div class="d-block-block flex-row p-2">
-            <button onclick="um()">1</button>
-            <button onclick="dois()">2</button>
-            <button onclick="tres()">3</button>
-        </div>
-        <div class="d-block-block flex-row p-2">
-            <button onclick="quatro()">4</button>
-            <button onclick="cinco()">5</button>
-            <button onclick="seis()">6</button>
-        </div>
-        <div class="d-block-flex flex-row p-2">
-            <button onclick="sete()">7</button>
-            <button onclick="oito()">8</button>
-            <button onclick="nove()">9</button>
-        </div>
-        <div class="d-block-flex flex-row p-2">
-            <button onclick="soma">+</button>
-            <button>-</button>
-            <button>x</button>
-        </div class="d-block-flex flex-row p-2">
-        <div class="d-block-flex text-center flex-row p-2">
-            <button>/</button>
-        </div>
-        <button>=</button>
-    </div>
-<p id="resultado">resultado</p>
-    <script>
-        var valorUm = "";
-        var valorDois = "";
 
-        function um(){
-            if(valorUm == "")
-            {
-                valorUm = 1;
-            }else{
-                valorDois = 1;
+            if (resultado == undefined) {
+                var resultado = 0;
             }
+
+            sinal = "";
+            valorUm = resultado;
+            valorDois = 0;
+            resultado = 0;
+
+            var conta = `${valorUm}`;
+
+            display.innerHTML = `${conta}`;
         }
 
-        console.log(calorUm)
->>>>>>> 6e4b832d9bb0bfd19f0c97b3e1139107172c7810
+        function limpar() {
+            valorUm = 0;
+            valorDois = 0;
+            sinal = "";
+
+            var conta = `${valorUm}`;
+
+            display.innerHTML = `${valorUm}`
+        }
     </script>
 </body>
 
