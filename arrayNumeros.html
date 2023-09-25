@@ -9,8 +9,20 @@
     <label for="numero">Insira um número: </label>
     <input id="numero" type="number">
 
+    <label for="achar">Qual número você quer achar?</label>
+    <input id="achar" type="number">
+
+    <label for="remover">Qual número você deseja remover?</label>
+    <input id="remover" type="number">
+
     <button onclick="add()">Adicionar</button>
-    <button onclick="mostrar()">Mostrar</button>
+    <button onclick="ordenar(this)">Crescente</button>
+    <button onclick="ordenar(this)">Decrescente</button>
+    <button onclick="ordenar(this)">Original</button>
+    <button onclick="acharNumero()">Achar</button>
+    <button onclick="remover()">Remover</button>
+
+    <p id="achado"></p>
 
     <ul id="list"></ul>
     <script src="arrayNumeros.js"></script>
