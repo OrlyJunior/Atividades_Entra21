@@ -1,6 +1,9 @@
 var lista = [];
 var listaO = [];
+
 var html = ``;
+
+var editado = 0;
 
 function add() {
     var num = document.getElementById("numero").value;
@@ -65,6 +68,49 @@ function ordenar(m) {
 }
 
 function remover() {
-    var position = document.getElementById("remover").value;
+    var numero = document.getElementById("remover").value;
 
+    for (var i = 0; i < lista.length; i++) {
+        if (lista[i] == numero) {
+            lista.splice(i, 1);
+        }
+    }
+
+    for (var i = 0; i < listaO.length; i++) {
+        if (listaO[i] == numero) {
+            listaO.splice(i, 1);
+        }
+    }
+}
+
+function editar() {
+    var edit = document.getElementById("editar").value;
+    editado = edit;
+
+    var input = `<label for="alterar">Altere o número: </label>
+                 <input id="alterar" type="number">
+                 <button onclick="alterar()" id="btnAlterar">Alterar</button>`
+
+    for (var i = 0; i < lista.length; i++) {
+        if (lista[i] == edit) {
+            var ref = document.getElementById("div");
+            ref.insertAdjacentHTML("afterend", input);
+        }
+    }
+}
+
+function alterar() {
+    var novoN = document.getElementById("alterar").value;
+
+    for (var i = 0; i < lista.length; i++) {
+        if (lista[i] == editado) {
+            lista.splice(i, 1, novoN);
+        }
+    }
+
+    for (var i = 0; i < listaO.length; i++) {
+        if (listaO[i] == editado) {
+            listaO.splice(i, 1, novoN);
+        }
+    }
 }
