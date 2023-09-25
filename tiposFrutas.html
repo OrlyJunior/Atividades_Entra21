@@ -21,9 +21,9 @@
             <input class="ms-2 form-control w-25" id="fruta" type="text">
         </div>
         <div class="mb-2">
-            <button class="btn btn-primary" onclick="paragrafo()">Parágrafo</button>
-            <button class="btn btn-primary" onclick="lista()">Lista</button>
-            <button class="btn btn-primary" onclick="tabela()">Tabela</button>
+            <button class="btn btn-primary" onclick="inserir(this)">Parágrafo</button>
+            <button class="btn btn-primary" onclick="inserir(this)">Lista</button>
+            <button class="btn btn-primary" onclick="inserir(this)">Tabela</button>
         </div>
 
         <p>Frutas: </p>
@@ -39,101 +39,7 @@
         </table>
     </div>
 
-    <script>
-        var p = [];
-        var list = [];
-        var table = [];
-
-        function lista() {
-            var input2 = document.getElementById("fruta");
-            var input = document.getElementById("fruta").value;
-
-            if (input == "")
-            {
-                alert("Você deve preencher o campo!");
-                return;
-            }
-
-            for(var i = 0; i < list.length; i++)
-            { 
-                if(list[i] == input)
-                {
-                    alert("Você não pode inserir uma fruta duplicada!");
-                    return;
-                }
-            }
-
-            list.unshift(input);
-
-            var ref = document.getElementsByTagName("li")[0];
-            ref.insertAdjacentHTML("afterend", `<li class="list-group-item-action list-group-item">${input}</li>`);
-
-
-
-            input2.value = "";
-            input2.focus();
-        }
-
-        function paragrafo() {
-            var input2 = document.getElementById("fruta");
-            var input = document.getElementById("fruta").value;
-
-            var ref = document.getElementsByTagName("p")[0];
-
-            if (input == "")
-            {
-                alert("Você deve preencher o campo!");
-                return;
-            }
-
-            for(var i = 0; i < p.length; i++)
-            { 
-                if(p[i] == input)
-                {
-                    alert("Você não pode inserir uma fruta duplicada!");
-                    return;
-                }
-            }
-
-            if (ref.innerHTML == "Frutas: ") {
-                ref.innerHTML += `${input}`;
-            } else {
-                ref.innerHTML += `, ${input}`;
-            }
-
-            p.unshift(input);
-
-            input2.value = "";
-            input2.focus();
-        }
-
-        function tabela() {
-            var input2 = document.getElementById("fruta");
-            var input = document.getElementById("fruta").value;
-
-            if (input == "")
-            {
-                alert("Você deve preencher o campo!");
-                return;
-            }
-
-            for(var i = 0; i < table.length; i++)
-            { 
-                if(table[i] == input)
-                {
-                    alert("Você não pode inserir uma fruta duplicada!");
-                    return;
-                }
-            }
-
-            table.unshift(input);
-
-            var ref = document.getElementsByTagName("tr")[0];
-            ref.insertAdjacentHTML("afterend", `<tr><td>${input}</td></tr>`);
-
-            input2.value = "";
-            input2.focus();
-        }
-    </script>
+    <script src="frutas.js"></script>
 </body>
+
 </html>
