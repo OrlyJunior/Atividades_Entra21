@@ -21,6 +21,11 @@
     <label for="qtt">Insira a quantidade: </label>
     <input id="qtt" type="text">
 
+    <label for="edit">Qual linha você deseja alterar?</label>
+    <input id="edit" type="number">
+
+    
+
     <table class="mt-2 table table-hover">
         <tr class="table-primary">
             <th>Nome do produto</th>
@@ -31,6 +36,7 @@
     </table>
 
     <button id="registrar" onclick="registrar()">Registrar</button>
+    <button onclick="editar()" id="editar">Editar</button>
 
     <script src="produto.js"></script>
 </body>
