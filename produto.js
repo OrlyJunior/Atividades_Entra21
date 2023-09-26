@@ -26,7 +26,35 @@ function registrar() {
                                             <td>${lista[0].valor}</td>
                                             <td>${lista[0].qtt}</td>
                                         </tr>`);
-    console.log(lista)
+}
+
+function remover() {
+    var ref = document.getElementById("editar");
+
+    ref.insertAdjacentHTML("afterend", `<label>Selecione uma linha para remover: </label>
+                                        <input id="linhaR" type="text">
+                                        <button onclick="remover2()">Excluir</button>`);
+}
+
+function remover2() {
+    var linhaR = document.getElementById("linhaR").value;
+    lista.splice(linhaR - 1, 1);
+
+    document.getElementById("table").innerHTML = `<tr class="table-primary">
+                                                    <th>Nome do produto</th>
+                                                    <th>Descrição</th>
+                                                    <th>Valor</th>
+                                                    <th>Quantidade</th>
+                                                </tr>`
+
+    for (var i = 0; i < lista.length; i++) {
+        var ref = document.getElementsByTagName("tr")[0].insertAdjacentHTML("afterend", `<tr>
+                                                                                            <td>${lista[i].nome}</td>
+                                                                                            <td>${lista[i].desc}</td>
+                                                                                            <td>${lista[i].valor}</td>
+                                                                                            <td>${lista[i].qtt}</td>
+                                                                                        </tr>`);
+    }
 }
 
 function editar() {
