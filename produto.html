@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produto</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
-    <label for="text">Adicione um produto: </label>
-    <input id="text" type="text">
+    <div class="m-2">
+        <div class="d-flex">
+            <div class="w-25 flex-column input-group-text">
+                <label for="text">Adicione um produto: </label>
+                <input class="form-control" placeholder="Produto..." id="text" type="text">
 
-    <label for="desc">Insira a descrição do produto: </label>
-    <input id="desc" type="text">
+                <label for="desc">Insira a descrição do produto: </label>
+                <input class="form-control" id="desc" placeholder="Descrição..." type="text">
 
-    <label for="valor">Insira o valor unitário: </label>
-    <input id="valor" type="number">
+                <label for="valor">Insira o valor unitário: </label>
+                <input class="form-control" id="valor" placeholder="Valor..." type="number">
 
-    <label for="qtt">Insira a quantidade: </label>
-    <input id="qtt" type="text">
+                <label for="qtt">Insira a quantidade: </label>
+                <input class="form-control" id="qtt" placeholder="Quantidade..." type="text">
+            </div>
 
-    <label for="edit">Qual linha você deseja alterar?</label>
-    <input id="edit" type="number">
+            <table id="table" class="w-75 h-25 ms-2 mt-2 table table-hover">
+                <tr class="table-primary">
+                    <th>Nome do produto</th>
+                    <th>Descrição</th>
+                    <th>Valor unitário</th>
+                    <th>Quantidade</th>
+                    <th>Valor total</th>
+                </tr>
+            </table>
+        </div>
 
-    
+        <p id="total">Total: R$0.00</p>
 
-    <table id="table" class="mt-2 table table-hover">
-        <tr class="table-primary">
-            <th>Nome do produto</th>
-            <th>Descrição</th>
-            <th>Valor unitário</th>
-            <th>Quantidade</th>
-            <th>Valor total</th>
-        </tr>
-    </table>
+        <button id="registrar" class="btn btn-success" onclick="registrar()">Registrar</button>
+        <button id="excluir" class="btn btn-danger" onclick="remover()">Excluir</button>
+        <button onclick="editar()" class="btn btn-warning" id="editar">Editar</button>
 
-    <p id="total">Total: R$0.00</p>
-
-    <button id="registrar" onclick="registrar()">Registrar</button>
-    <button id="excluir" onclick="remover()">Excluir</button>
-    <button onclick="editar()" id="editar">Editar</button>
+    </div>
 
     <script src="produto.js"></script>
 </body>
+
 </html>
