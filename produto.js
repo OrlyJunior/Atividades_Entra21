@@ -8,23 +8,36 @@ var qtt = document.getElementById("qtt").value;
 
 var produto = { nome: nome, desc: desc, valor: valor, qtt: qtt };
 
+var soma = 0;
 function registrar() {
+    soma = 0;
+
     nome = document.getElementById("text").value;
     desc = document.getElementById("desc").value;
-    valor = document.getElementById("valor").value;
-    qtt = document.getElementById("qtt").value;
+    valor = parseFloat(document.getElementById("valor").value);
+    qtt = parseFloat(document.getElementById("qtt").value);
 
-    produto = { nome: nome, desc: desc, valor: valor, qtt: qtt };
+    produto = { nome: nome, desc: desc, valor: parseFloat(valor.toFixed(2)), qtt: qtt, total: parseFloat((valor * qtt).toFixed(2)) };
 
     lista.unshift(produto);
+
+    console.log(lista)
+    
+
+    for (i = 0; i < lista.length; i++) {
+        soma += lista[i].total;
+    }
+
+    document.getElementById("total").innerHTML = `Total: R$${parseFloat(soma).toFixed(2)}`;
 
     var ref = document.getElementsByTagName("tr")[0];
 
     ref.insertAdjacentHTML("afterend", `<tr>
                                             <td>${lista[0].nome}</td>
                                             <td>${lista[0].desc}</td>
-                                            <td>${lista[0].valor}</td>
+                                            <td>R$${lista[0].valor}</td>
                                             <td>${lista[0].qtt}</td>
+                                            <td>R$${lista[0].total}</td>
                                         </tr>`);
 }
 
@@ -53,12 +66,18 @@ function remover2() {
                                                                                             <td>${lista[i].desc}</td>
                                                                                             <td>${lista[i].valor}</td>
                                                                                             <td>${lista[i].qtt}</td>
-                                                                                        </tr>`);
+                                                                                         </tr>`);
     }
 }
 
 function editar() {
     linhaE = document.getElementById("edit").value;
+
+    if(linhaE == "")
+    {
+        alert("Você deve informar as linhas que quer alterar!");
+        return;
+    }
 
     var ref = document.getElementById("editar");
     ref.insertAdjacentHTML("afterend", `<label for="text">Nome: </label>
@@ -78,13 +97,31 @@ function editar() {
 }
 
 function editar3() {
-    var novoN = document.getElementById("text2").value;
-    var novoD = document.getElementById("desc2").value;
-    var novoV = document.getElementById("valor2").value;
-    var novoQ = document.getElementById("qtt2").value;
+    soma = 0;
 
-    document.getElementsByTagName("tr")[linhaE].innerHTML = `<td>${novoN}</td>
-    <td>${novoD}</td>
-    <td>${novoV}</td>
-    <td>${novoQ}</td>`
+    if (linhaE - 1 > lista.length) {
+        alert("Essa posição não existe na lista!");
+        return;
+    }
+
+    var nome = document.getElementById("text2").value;
+    var desc = document.getElementById("desc2").value;
+    var valor = document.getElementById("valor2").value;
+    var qtt = document.getElementById("qtt2").value;
+
+    produto = { nome: nome, desc: desc, valor: valor, qtt: qtt,  total: valor * qtt };
+
+    lista.splice(linhaE - 1, 1, produto);
+
+    document.getElementsByTagName("tr")[linhaE].innerHTML = `<td>${lista[linhaE - 1].nome}</td>
+                                                             <td>${lista[linhaE - 1].desc}</td>
+                                                             <td>R$${lista[linhaE - 1].valor}</td>
+                                                             <td>${lista[linhaE - 1].qtt}</td>
+                                                             <td>R$${lista[linhaE - 1].total}</td>`
+
+    for (i = 0; i < lista.length; i++) {
+        soma += lista[i].total;
+    }
+
+    document.getElementById("total").innerHTML = `Total: R$${parseFloat(soma).toFixed(2)}`;
 }
