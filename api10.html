@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 10</title>
+
+    <style>
+        img:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="w-100">
+        <img onclick="imagem2(this)">
+        <img onclick="imagem2(this)">
+        <img onclick="imagem2(this)">
+        <img onclick="imagem2(this)">
+        <img onclick="imagem2(this)">
+        <img onclick="imagem2(this)">
+        <img onclick="imagem2(this)">
+        <img onclick="imagem2(this)">
+        <img onclick="imagem2(this)">
+        <img onclick="imagem2(this)">
+    </div>
+
+    <button class="mx-auto p-2 start-50 btn btn-primary" onclick="imagem()">Gerar 10 imagens</button>
+
+    <script>
+        function imagem() {
+            fetch(`https://api.thecatapi.com/v1/images/search?limit=10`)
+                .then((obj) => obj.json())
+                .then((imagens) => {
+                    for (var i = 0; i < 10; i++) {
+                        document.getElementsByTagName("img")[i].setAttribute("src", imagens[i].url);
+                        document.getElementsByTagName("img")[i].setAttribute("width", 175);
+                    }
+                }
+                )
+        }
+
+        function imagem2(img) {
+            fetch(`https://api.thecatapi.com/v1/images/search`)
+                .then((dados) => dados.json())
+                .then((image) => {
+                    img.setAttribute("src", image[0].url);
+                }
+                )
+                .catch((erro) => console.log(erro))
+        }
+    </script>
+</body>
+
+</html>
