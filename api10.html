@@ -18,35 +18,54 @@
 </head>
 
 <body>
-    <div class="w-100">
-        <img onclick="imagem2(this)">
-        <img onclick="imagem2(this)">
-        <img onclick="imagem2(this)">
-        <img onclick="imagem2(this)">
-        <img onclick="imagem2(this)">
-        <img onclick="imagem2(this)">
-        <img onclick="imagem2(this)">
-        <img onclick="imagem2(this)">
-        <img onclick="imagem2(this)">
-        <img onclick="imagem2(this)">
+    <div class="d-block">
+        <figure>
+            <img onclick="imagem3(this)">
+        </figure>
+        <button onclick="imagem2()">Gerar 1 gato</button>
     </div>
 
-    <button class="mx-auto p-2 start-50 btn btn-primary" onclick="imagem()">Gerar 10 imagens</button>
+    <figure class="w-100">
+
+    </figure>
+
+
+    <div class="w-100 d-flex justify-content-between">
+        <div class="input-group-text">
+            <label for="tamanho">Digite o tamanho das imagens: </label>
+            <input class="ms-4 form-control w-25" id="tamanho" type="text">
+        </div>
+
+        <button class="mx-auto p-2 start-50 btn btn-primary" onclick="imagem()">Gerar 10 imagens</button>
+    </div>
 
     <script>
         function imagem() {
+            document.getElementsByTagName("figure")[1].innerHTML = ``;
+
+            var tamanho = document.getElementById("tamanho").value;
+
             fetch(`https://api.thecatapi.com/v1/images/search?limit=10`)
                 .then((obj) => obj.json())
                 .then((imagens) => {
                     for (var i = 0; i < 10; i++) {
-                        document.getElementsByTagName("img")[i].setAttribute("src", imagens[i].url);
-                        document.getElementsByTagName("img")[i].setAttribute("width", 175);
+                        document.getElementsByTagName("figure")[0].innerHTML += `<img class="m-1" width="${tamanho}" src="${imagens[i].url}" onclick="imagem3(this)">`
                     }
                 }
                 )
         }
 
-        function imagem2(img) {
+        function imagem2() {
+            fetch(`https://api.thecatapi.com/v1/images/search`)
+                .then((dados) => dados.json())
+                .then((image) => {
+                    document.getElementsByTagName("img")[0].setAttribute("src", image[0].url);
+                }
+                )
+                .catch((erro) => console.log(erro))
+        }
+
+        function imagem3(img) {
             fetch(`https://api.thecatapi.com/v1/images/search`)
                 .then((dados) => dados.json())
                 .then((image) => {
