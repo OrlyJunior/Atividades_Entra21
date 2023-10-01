@@ -1,6 +1,5 @@
-var lista = [];
-var cadastros = [];
-localStorage.setItem("cadastros", JSON.stringify(lista));
+var lista = [localStorage.getItem("cadastros")];
+localStorage.setItem("cadastros", lista);
 
 function cadastrar() {
     var nome = document.getElementById("user").value;
@@ -9,18 +8,18 @@ function cadastrar() {
 
     var obj = { nome: nome, email: email, senha: senha };
 
-    for (i = 0; i < JSON.parse(localStorage.getItem("cadastros")).length; i++) {
-        if (JSON.parse(localStorage.getItem("cadastros"))[i].nome == nome) {
+    for (i = 0; i < localStorage.getItem("cadastros").length; i++) {
+        if (localStorage.getItem("cadastros")[i].nome == nome) {
             alert("Esse nome já está em uso!");
             return;
         }
 
-        if (JSON.parse(localStorage.getItem("cadastros"))[i].senha == senha) {
+        if (localStorage.getItem("cadastros")[i].senha == senha) {
             alert("Essa senha já está em uso!");
             return;
         }
 
-        if (JSON.parse(localStorage.getItem("cadastros"))[i].email == email) {
+        if (localStorage.getItem("cadastros")[i].email == email) {
             alert("Esse e-mail já está em uso!");
             return;
         }
@@ -33,7 +32,7 @@ function cadastrar() {
 
     lista.unshift(obj);
 
-    localStorage.setItem("cadastros", JSON.stringify(lista));
+    localStorage.setItem("cadastros", lista);
 
     window.location.href = "login.html";
 }
