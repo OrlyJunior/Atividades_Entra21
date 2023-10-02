@@ -3,11 +3,14 @@ function login() {
     var email = document.getElementById("email2").value;
     var senha = document.getElementById("senha2").value;
 
-    for (i = 0; i < JSON.parse(localStorage.getItem("cadastros")).length; i++) {
-        if (JSON.parse(localStorage.getItem("cadastros"))[i].nome == nome && JSON.parse(localStorage.getItem("cadastros"))[i].senha == senha && JSON.parse(localStorage.getItem("cadastros"))[i].email == email) {
+    var tamanho = JSON.parse(localStorage.getItem("nome").length);
+
+    for (i = 0; i < tamanho; i++) {
+        if(localStorage.getItem("nome")[i].indexOf(nome) && localStorage.getItem("senha")[i].indexOf(senha) && localStorage.getItem("email")[i].indexOf(email)) {
             window.location.href = "cadastrado.html";
             return;
         }
+        console.log(tamanho)
     }
 
     if (!email.includes("@")) {
