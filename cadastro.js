@@ -1,23 +1,39 @@
-var listaNomes = [localStorage.getItem("nome")];
-var listaSenhas = [localStorage.getItem("senha")];
-var listaEmail = [localStorage.getItem("email")];
+var usuarios = [];
+
+var nome = "";
+var email = "";
+var senha = "";
 
 function cadastrar() {
-    var nome = document.getElementById("user").value;
-    var email = document.getElementById("email").value;
-    var senha = document.getElementById("senha").value;
+    nome = document.getElementById("user").value;
+    email = document.getElementById("email").value;
+    senha = document.getElementById("senha").value;
+
+    var obj = { nome: nome, email: email, senha: senha };
 
     if (!email.includes("@")) {
         alert("O e-mail é inválido!");
         return;
     }
-    listaNomes.unshift(nome);
-    listaEmail.unshift(email);
-    listaSenhas.unshift(senha);
+    
+    localStorage.setItem("obj", JSON.stringify(obj));
 
-    localStorage.setItem("email", listaEmail);
-    localStorage.setItem("senha", listaSenhas);
-    localStorage.setItem("nome", listaNomes);
+    usuario = JSON.parse(localStorage.getItem("obj"));
 
-    window.location.href = "login.html";
+    usuarios.unshift(usuario)
+
+    console.log(usuarios)
+}
+
+function login() {
+    for (let i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].nome == nome && usuarios[i].senha == senha && usuarios[i].email == email) {
+            window.location.href = "cadastrado.html"
+            return;
+        }
+    }
+
+    console.log(usuarios.nome)
+
+    alert("O cadastro não é válido!");
 }

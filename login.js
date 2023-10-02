@@ -1,22 +1,31 @@
+var listaN = JSON.parse(localStorage.getItem("nome"));
+var listaS = JSON.parse(localStorage.getItem("senha"));
+var listaE = JSON.parse(localStorage.getItem("email"));
+
+console.log(listaN)
+
+var nome = "";
+var email = "";
+var senha = "";
+
 function login() {
-    var nome = document.getElementById("user2").value;
-    var email = document.getElementById("email2").value;
-    var senha = document.getElementById("senha2").value;
-
-    var tamanho = JSON.parse(localStorage.getItem("nome").length);
-
-    for (i = 0; i < tamanho; i++) {
-        if(localStorage.getItem("nome")[i].indexOf(nome) && localStorage.getItem("senha")[i].indexOf(senha) && localStorage.getItem("email")[i].indexOf(email)) {
-            window.location.href = "cadastrado.html";
-            return;
-        }
-        console.log(tamanho)
-    }
+    nome = document.getElementById("user2").value;
+    email = document.getElementById("email2").value;
+    senha = document.getElementById("senha2").value;
 
     if (!email.includes("@")) {
         alert("O e-mail é inválido!");
         return;
     }
 
-    alert("O cadastro é inválido!");
+    var nomeV = listaN.find((nome) => nome == nome);
+    var senhaV = listaS.find((senha) => senha);
+    var senhaE = listaE.find((email) => email);
+
+    console.log(nomeV)
+
+    if (nomeV == nome && senhaV == senha && senhaE == email) { window.location.href = "cadastrado.html" 
+    }
+
+    alert("O cadastro não é válido!");
 }
