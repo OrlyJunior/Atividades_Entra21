@@ -27,32 +27,34 @@
 
                     Carro carro = new Carro();
 
-                    string p = "e";
+                    string p = "f";
 
-                    while (p == "e")
+                    while (p == "f")
                     {
+                        p = "e";
+
                         Console.WriteLine("Insira a placa do carro: ");
                         carro.placa = Console.ReadLine();
 
                         foreach (Carro car in lista)
                         {
-                            if(car.placa == carro.placa)
+                            Console.WriteLine(car.placa);
+                            if (car.placa == carro.placa)
                             {
                                 Console.WriteLine("Essa placa já existe!");
 
-                                break;
+                                p = "f";
                             }
                         }
 
-                        if(carro.placa.Length < 7 || carro.placa.Length > 8)
+                        if(carro.placa.Length > 7 || carro.placa.Length < 7)
                         {
-                            Console.WriteLine("A placa tem mais ou menos que 7 digitos!");
-                        }
-                        else
-                        {
+                            Console.WriteLine("A placa é maior ou menor do que o tamanho padrão!");
+
                             p = "f";
                         }
                     }
+
                     Console.WriteLine("Insira o modelo do carro: ");
                     carro.Modelo = Console.ReadLine();
 
@@ -110,14 +112,14 @@
                     }
                 }
 
-                if(operacao == "E")
+                if (operacao == "E")
                 {
                     Console.Clear();
 
                     Console.WriteLine("Insira a placa do carro que deseja alterar: ");
                     string placaE = Console.ReadLine();
 
-                    for(int pos = 0; pos < lista.Count; pos++)
+                    for (int pos = 0; pos < lista.Count; pos++)
                     {
                         if (lista[pos].placa == placaE)
                         {
@@ -152,7 +154,7 @@
                                 }
                                 else
                                 {
-                                    if(erro == "a")
+                                    if (erro == "a")
                                     {
                                         p = "f";
                                     }
@@ -160,7 +162,7 @@
                                     {
                                         p = "e";
                                     }
-                                    
+
                                 }
                             }
                             Console.WriteLine("Insira o modelo do carro: ");
@@ -177,7 +179,7 @@
 
                             lista.Add(carro);
                         }
-                        
+
                         Console.WriteLine("Deseja continuar? S - Sim N - Não");
                         string cont = Console.ReadLine().ToUpper();
 
@@ -192,23 +194,37 @@
                     }
                 }
 
-                if(operacao == "S")
+                if (operacao == "S")
                 {
                     Console.WriteLine("Insira a placa do carro que você deseja consultar: ");
                     string placaS = Console.ReadLine();
 
-                    for(int cons = 0; cons < lista.Count; cons++)
+                    foreach (Carro n in lista)
                     {
-                        if (lista[cons].placa == placaS)
+                        if (n.placa == placaS)
                         {
-                            lista[cons].display();
+                            Console.WriteLine(n.display());
+                        }
+                    }
 
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Essa placa não existe!");
-                        }
+                    Console.WriteLine("Deseja continuar? S - Sim N - Não");
+                    string cont = Console.ReadLine().ToUpper();
+
+                    if (cont == "S")
+                    {
+                        continuar++;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+
+                if (operacao == "C")
+                {
+                    foreach (Carro l in lista)
+                    {
+                        Console.WriteLine(l.display());
                     }
 
                     Console.WriteLine("Deseja continuar? S - Sim N - Não");
