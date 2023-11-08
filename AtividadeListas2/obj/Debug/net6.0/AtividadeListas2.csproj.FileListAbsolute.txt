@@ -1,0 +1,15 @@
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\bin\Debug\net6.0\AtividadeListas2.exe
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\bin\Debug\net6.0\AtividadeListas2.deps.json
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\bin\Debug\net6.0\AtividadeListas2.runtimeconfig.json
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\bin\Debug\net6.0\AtividadeListas2.dll
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\bin\Debug\net6.0\AtividadeListas2.pdb
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\obj\Debug\net6.0\AtividadeListas2.csproj.AssemblyReference.cache
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\obj\Debug\net6.0\AtividadeListas2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\obj\Debug\net6.0\AtividadeListas2.AssemblyInfoInputs.cache
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\obj\Debug\net6.0\AtividadeListas2.AssemblyInfo.cs
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\obj\Debug\net6.0\AtividadeListas2.csproj.CoreCompileInputs.cache
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\obj\Debug\net6.0\AtividadeListas2.dll
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\obj\Debug\net6.0\refint\AtividadeListas2.dll
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\obj\Debug\net6.0\AtividadeListas2.pdb
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\obj\Debug\net6.0\AtividadeListas2.genruntimeconfig.cache
+C:\Users\orly.junior\Documents\AtividadeListas2\AtividadeListas2\obj\Debug\net6.0\ref\AtividadeListas2.dll
