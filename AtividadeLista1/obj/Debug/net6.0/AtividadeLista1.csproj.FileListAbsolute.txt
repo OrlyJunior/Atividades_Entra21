@@ -1,0 +1,15 @@
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\obj\Debug\net6.0\AtividadeLista1.csproj.AssemblyReference.cache
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\obj\Debug\net6.0\AtividadeLista1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\obj\Debug\net6.0\AtividadeLista1.AssemblyInfoInputs.cache
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\obj\Debug\net6.0\AtividadeLista1.AssemblyInfo.cs
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\obj\Debug\net6.0\AtividadeLista1.csproj.CoreCompileInputs.cache
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\bin\Debug\net6.0\AtividadeLista1.exe
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\bin\Debug\net6.0\AtividadeLista1.deps.json
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\bin\Debug\net6.0\AtividadeLista1.runtimeconfig.json
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\bin\Debug\net6.0\AtividadeLista1.dll
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\bin\Debug\net6.0\AtividadeLista1.pdb
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\obj\Debug\net6.0\AtividadeLista1.dll
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\obj\Debug\net6.0\refint\AtividadeLista1.dll
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\obj\Debug\net6.0\AtividadeLista1.pdb
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\obj\Debug\net6.0\AtividadeLista1.genruntimeconfig.cache
+C:\Users\orly.junior\Documents\AtividadeLista1\AtividadeLista1\obj\Debug\net6.0\ref\AtividadeLista1.dll
