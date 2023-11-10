@@ -30,6 +30,8 @@
                     {
                         p = true;
                     }
+
+                    Console.Clear();
                 }
 
                 if (op == 2)
@@ -43,11 +45,23 @@
                     {
                         p = true;
                     }
+
+                    Console.Clear();
                 }
 
                 if (op == 3)
                 {
                     consulta(produtos);
+
+                    Console.WriteLine("Deseja continuar? S - Sim");
+                    string cont = Console.ReadLine().ToUpper();
+
+                    if (cont == "S")
+                    {
+                        p = true;
+                    }
+
+                    Console.Clear();
                 }
             }
 
@@ -76,28 +90,41 @@
                         pos.Value.Add(produto);
                     }
                 }
+
+                Console.Clear();
             }
 
             static void addCategoria(SortedList<string, List<Produto>> categorias)
             {
+                Console.Clear();
+
                 List<Produto> lista = new List<Produto>();
 
                 Console.WriteLine("Insira o nome da categoria:");
                 string cate = Console.ReadLine();
 
                 categorias.Add(cate, lista);
+
+                Console.Clear();
             }
 
             static void consulta(SortedList<string, List<Produto>> produtos)
             {
+                Console.Clear();
+
                 Console.WriteLine("Insira a categoria que deseja mostrar:");
                 string cat = Console.ReadLine();
 
+                Console.Clear();
+
                 foreach(KeyValuePair<string, List<Produto>> posV in produtos)
                 {
-                    foreach(Produto p in posV.Value)
+                    if (posV.Key == cat)
                     {
-                        Console.WriteLine(p.toString());
+                        foreach (Produto p in posV.Value)
+                        {
+                            Console.WriteLine($"Categoria: {cat}{p.toString()}\n");
+                        }
                     }
                 }
             }
