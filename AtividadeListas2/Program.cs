@@ -10,44 +10,65 @@
 
             while (p == "S")
             {
-                Produto produto = new Produto();
+                Console.Clear();
 
-                produto.id = int.Parse(Console.ReadLine());
-                produto.desc = Console.ReadLine();
-                produto.preco = double.Parse(Console.ReadLine());
+                Console.WriteLine("Selecione uma operação:");
 
-                if(produtos.Count > 0)
+                Console.WriteLine("1 - Adicionar produto");
+                Console.WriteLine("2 - Listar produtos");
+                int op = int.Parse(Console.ReadLine());
+
+                if (op == 1)
                 {
+                    Produto produto = new Produto();
+                    Console.WriteLine("Informe o id: ");
+                    produto.Id = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Informe a descrição: ");
+                    produto.Desc = Console.ReadLine();
+
+                    Console.WriteLine("Informe o preço: ");
+                    produto.Preco = double.Parse(Console.ReadLine());
+
                     adiciona(produtos, produto);
-                }
-                else
-                {
-                    produtos.AddFirst(produto);                   
+
+                    Console.WriteLine("Continuar? S - sim");
+                    p = Console.ReadLine().ToUpper();
                 }
 
-                Console.WriteLine("Continuar? S - sim");
-                p = Console.ReadLine().ToUpper();
-
-                foreach (Produto n in produtos)
+                if(op == 2)
                 {
-                    Console.WriteLine(n.toString());
+                    foreach (Produto n in produtos)
+                    {
+                        Console.WriteLine(n.toString());
+                    }
+
+                    Console.WriteLine("Continuar? S - sim");
+                    p = Console.ReadLine().ToUpper();
                 }
             }
         }
-
         static void adiciona(LinkedList<Produto> produtos, Produto produto)
         {
-            foreach (Produto x in produtos)
+            if(produtoExist(produtos, produto)){
+                Console.WriteLine("Produto já cadastrado");
+            }
+            else
             {
-                if (x.desc == produto.desc)
+                produtos.AddLast(produto);
+            }            
+        }
+
+        static bool produtoExist(LinkedList<Produto> produtos, Produto produto)
+        {
+            foreach(Produto n in produtos)
+            {
+                if (n.Desc.Equals(produto.Desc))
                 {
-                    Console.WriteLine("Produto duplicado!");
-                }
-                else
-                {
-                    produtos.AddFirst(produto);
+                    return true;
                 }
             }
+            return false;
         }
     }
 }

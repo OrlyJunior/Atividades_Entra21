@@ -8,15 +8,13 @@ namespace AtividadeListas2
 {
     class Produto
     {
-        public int id { get; set; }
-        public string desc { get; set; }
-        public double preco { get; set; }
-
-
+        public int Id { get; set; }
+        public string Desc { get; set; }
+        public double Preco { get; set; }
 
         public string toString()
         {
-            return $"Id: {id}\nDescrição: {desc}\nPreço: {preco}\n";
+            return $"Id: {Id}\nDescrição: {Desc}\nPreço: {Preco}\n";
         }
     }
 }
