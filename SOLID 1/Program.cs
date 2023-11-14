@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            CrudProduto crud = new CrudProduto();
+            CrudProduto crud = new();
 
             bool p = true;
 
@@ -25,7 +25,7 @@
                 {
                     Console.Clear();
 
-                    Produto produto = new Produto();
+                    Produto produto = new();
 
                     Console.WriteLine("Insira o id do Produto:");
                     produto.Id = int.Parse(Console.ReadLine());

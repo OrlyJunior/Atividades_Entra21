@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOLID_1
 {
-    class Produto
+    class Produto : ItoString
     {
         public int Id { get; set; }
         public string Descricao { get; set; }

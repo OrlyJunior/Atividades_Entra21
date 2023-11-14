@@ -8,7 +8,7 @@ namespace SOLID_1
 {
     class CrudProduto
     {
-        List<Produto> produtos = new List<Produto>();
+        List<Produto> produtos = new();
 
         public bool salvar(Produto prod)
         {
@@ -65,7 +65,7 @@ namespace SOLID_1
 
         public bool alterar()
         {
-            Produto produto = new Produto();
+            Produto produto = new();
 
             Console.WriteLine("Insira o novo id do Produto:");
             produto.Id = int.Parse(Console.ReadLine());
@@ -84,6 +84,8 @@ namespace SOLID_1
                 if (produtos[i].Id == altera)
                 {
                     produtos[i] = produto;
+
+                    break;
                 }
             }
 
