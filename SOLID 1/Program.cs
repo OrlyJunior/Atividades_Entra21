@@ -23,18 +23,7 @@
 
                 if (op == 1)
                 {
-                    Console.Clear();
-
                     Produto produto = new();
-
-                    Console.WriteLine("Insira o id do Produto:");
-                    produto.Id = int.Parse(Console.ReadLine());
-
-                    Console.WriteLine("Insira a descrição do Produto:");
-                    produto.Descricao = Console.ReadLine();
-
-                    Console.WriteLine("Insira o preço do Produto:");
-                    produto.Preco = double.Parse(Console.ReadLine());
 
                     crud.salvar(produto);
                 }

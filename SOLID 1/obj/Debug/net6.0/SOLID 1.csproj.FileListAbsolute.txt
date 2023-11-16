@@ -13,3 +13,17 @@ C:\Users\orly.junior\Documents\SOLID 1\SOLID 1\obj\Debug\net6.0\refint\SOLID 1.d
 C:\Users\orly.junior\Documents\SOLID 1\SOLID 1\obj\Debug\net6.0\SOLID 1.pdb
 C:\Users\orly.junior\Documents\SOLID 1\SOLID 1\obj\Debug\net6.0\SOLID 1.genruntimeconfig.cache
 C:\Users\orly.junior\Documents\SOLID 1\SOLID 1\obj\Debug\net6.0\ref\SOLID 1.dll
+C:\Users\Orly\Documents\SOLID\SOLID 1\bin\Debug\net6.0\SOLID 1.exe
+C:\Users\Orly\Documents\SOLID\SOLID 1\bin\Debug\net6.0\SOLID 1.deps.json
+C:\Users\Orly\Documents\SOLID\SOLID 1\bin\Debug\net6.0\SOLID 1.runtimeconfig.json
+C:\Users\Orly\Documents\SOLID\SOLID 1\bin\Debug\net6.0\SOLID 1.dll
+C:\Users\Orly\Documents\SOLID\SOLID 1\bin\Debug\net6.0\SOLID 1.pdb
+C:\Users\Orly\Documents\SOLID\SOLID 1\obj\Debug\net6.0\SOLID 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Orly\Documents\SOLID\SOLID 1\obj\Debug\net6.0\SOLID 1.AssemblyInfoInputs.cache
+C:\Users\Orly\Documents\SOLID\SOLID 1\obj\Debug\net6.0\SOLID 1.AssemblyInfo.cs
+C:\Users\Orly\Documents\SOLID\SOLID 1\obj\Debug\net6.0\SOLID 1.csproj.CoreCompileInputs.cache
+C:\Users\Orly\Documents\SOLID\SOLID 1\obj\Debug\net6.0\SOLID 1.dll
+C:\Users\Orly\Documents\SOLID\SOLID 1\obj\Debug\net6.0\refint\SOLID 1.dll
+C:\Users\Orly\Documents\SOLID\SOLID 1\obj\Debug\net6.0\SOLID 1.pdb
+C:\Users\Orly\Documents\SOLID\SOLID 1\obj\Debug\net6.0\SOLID 1.genruntimeconfig.cache
+C:\Users\Orly\Documents\SOLID\SOLID 1\obj\Debug\net6.0\ref\SOLID 1.dll

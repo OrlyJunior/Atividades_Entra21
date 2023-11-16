@@ -1,18 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SOLID_1
+﻿namespace SOLID_1
 {
     class CrudProduto
     {
         List<Produto> produtos = new();
 
-        public bool salvar(Produto prod)
+        public bool salvar(Produto produto)
         {
-            produtos.Add(prod);
+            Console.Clear();
+
+            bool id = true;
+
+            bool existe = false;
+
+            while (id == true)
+            {
+                Console.WriteLine("Insira o id do Produto:");
+                produto.Id = int.Parse(Console.ReadLine());
+
+                foreach (Produto i in produtos)
+                {
+                    if (produto.Id == i.Id)
+                    {
+                        Console.WriteLine("Já existe um produto com esse id!");
+
+                        existe = true;
+
+                        break;
+                    }
+                    else
+                    {
+                        existe = false;
+                    }
+                }
+
+                if (existe == false)
+                {
+                    id = false;
+                }
+            }
+
+            Console.WriteLine("Insira a descrição do Produto:");
+            produto.Descricao = Console.ReadLine();
+
+            Console.WriteLine("Insira o preço do Produto:");
+            produto.Preco = double.Parse(Console.ReadLine());
+
+
+            produtos.Add(produto);
 
             Console.WriteLine("Produto adicionado com sucesso.");
 
@@ -24,12 +58,23 @@ namespace SOLID_1
             Console.WriteLine("Insira o id que quer encontrar:");
             int consulta = int.Parse(Console.ReadLine());
 
+            bool encontrou = false;
+
             foreach (Produto i in produtos)
             {
                 if (i.Id == consulta)
                 {
                     Console.WriteLine(i.toString());
+
+                    encontrou = true;
+
+                    break;
                 }
+            }
+
+            if (encontrou == false)
+            {
+                Console.WriteLine("Esse produto não existe!");
             }
 
             return true;
@@ -37,9 +82,14 @@ namespace SOLID_1
 
         public bool consultarTodos()
         {
-            foreach(Produto i in produtos)
+            foreach (Produto i in produtos)
             {
                 Console.WriteLine(i.toString());
+            }
+
+            if (produtos.Count == 0)
+            {
+                Console.WriteLine("Não há produtos cadastrados!");
             }
 
             return true;
@@ -50,15 +100,26 @@ namespace SOLID_1
             Console.WriteLine("Insira o id do produto que deseja deletar: ");
             int deleta = int.Parse(Console.ReadLine());
 
-            for(int i = 0; i < produtos.Count; i++)
+            bool encontrou = false;
+
+            for (int i = 0; i < produtos.Count; i++)
             {
                 if (produtos[i].Id == deleta)
                 {
                     produtos.RemoveAt(i);
+
+                    Console.WriteLine("Produto deletado com sucesso.");
+
+                    encontrou = true;
+
+                    break;
                 }
             }
 
-            Console.WriteLine("Produto deletado com sucesso.");
+            if (encontrou == false)
+            {
+                Console.WriteLine("Esse produto não existe!");
+            }
 
             return true;
         }
@@ -79,17 +140,25 @@ namespace SOLID_1
             Console.WriteLine("Insira o id do produto que deseja alterar: ");
             int altera = int.Parse(Console.ReadLine());
 
+            bool encontrou = false;
+
             for (int i = 0; i < produtos.Count; i++)
             {
                 if (produtos[i].Id == altera)
                 {
                     produtos[i] = produto;
 
+                    Console.WriteLine("Produto alterado com sucesso.");
+
+                    encontrou = true;
                     break;
                 }
             }
 
-            Console.WriteLine("Produto alterado com sucesso.");
+            if (encontrou == false)
+            {
+                Console.WriteLine("Esse produto não existe!");
+            }
 
             return true;
         }
