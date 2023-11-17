@@ -16,7 +16,7 @@ namespace ExercícioArquivo
             {
                 Console.Clear();
 
-                Console.WriteLine("Qual operação deseja realizar?\n1 - Adicionar\n2 - Mostrar\n3 - Deletar");
+                Console.WriteLine("Qual operação deseja realizar?\n1 - Adicionar\n2 - Mostrar\n3 - Deletar\n4 - Alterar");
                 int op = int.Parse(Console.ReadLine());
 
                 if (op == 1)
@@ -34,6 +34,13 @@ namespace ExercícioArquivo
                 if (op == 3)
                 {
                     crud.deletar();
+
+                    Console.ReadKey();
+                }
+
+                if(op == 4)
+                {
+                    crud.alterar();
 
                     Console.ReadKey();
                 }
