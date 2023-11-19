@@ -6,8 +6,6 @@ namespace ExercícioArquivo
     {
         static void Main(string[] args)
         {
-            
-
             Crud crud = new();
 
             bool cont = true;
@@ -16,29 +14,38 @@ namespace ExercícioArquivo
             {
                 Console.Clear();
 
-                Console.WriteLine("Qual operação deseja realizar?\n1 - Adicionar\n2 - Mostrar\n3 - Deletar\n4 - Alterar");
+                Console.WriteLine("Qual operação deseja realizar?\n1 - Adicionar\n2 - Mostrar por id\n3 - Mostrar todos\n4 - Deletar\n5 - Alterar");
                 int op = int.Parse(Console.ReadLine());
 
                 if (op == 1)
                 {
                     crud.add();
+
+                    Console.ReadKey();
                 }
 
-                if (op == 2)
+                if(op == 2)
                 {
-                    crud.show();
+                    crud.listaId();
 
                     Console.ReadKey();
                 }
 
                 if (op == 3)
                 {
+                    crud.show();
+
+                    Console.ReadKey();
+                }
+
+                if (op == 4)
+                {
                     crud.deletar();
 
                     Console.ReadKey();
                 }
 
-                if(op == 4)
+                if(op == 5)
                 {
                     crud.alterar();
 

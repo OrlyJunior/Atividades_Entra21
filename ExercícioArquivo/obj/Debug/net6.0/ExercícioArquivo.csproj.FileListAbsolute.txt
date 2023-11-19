@@ -13,3 +13,17 @@ C:\Users\orly.junior\Documents\ExercícioArquivo\ExercícioArquivo\obj\Debug\net
 C:\Users\orly.junior\Documents\ExercícioArquivo\ExercícioArquivo\obj\Debug\net6.0\ExercícioArquivo.pdb
 C:\Users\orly.junior\Documents\ExercícioArquivo\ExercícioArquivo\obj\Debug\net6.0\ExercícioArquivo.genruntimeconfig.cache
 C:\Users\orly.junior\Documents\ExercícioArquivo\ExercícioArquivo\obj\Debug\net6.0\ref\ExercícioArquivo.dll
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\bin\Debug\net6.0\ExercícioArquivo.exe
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\bin\Debug\net6.0\ExercícioArquivo.deps.json
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\bin\Debug\net6.0\ExercícioArquivo.runtimeconfig.json
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\bin\Debug\net6.0\ExercícioArquivo.dll
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\bin\Debug\net6.0\ExercícioArquivo.pdb
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\obj\Debug\net6.0\ExercícioArquivo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\obj\Debug\net6.0\ExercícioArquivo.AssemblyInfoInputs.cache
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\obj\Debug\net6.0\ExercícioArquivo.AssemblyInfo.cs
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\obj\Debug\net6.0\ExercícioArquivo.csproj.CoreCompileInputs.cache
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\obj\Debug\net6.0\ExercícioArquivo.dll
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\obj\Debug\net6.0\refint\ExercícioArquivo.dll
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\obj\Debug\net6.0\ExercícioArquivo.pdb
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\obj\Debug\net6.0\ExercícioArquivo.genruntimeconfig.cache
+C:\Users\Orly\Documents\ArquivosE21\ExercícioArquivo\obj\Debug\net6.0\ref\ExercícioArquivo.dll
