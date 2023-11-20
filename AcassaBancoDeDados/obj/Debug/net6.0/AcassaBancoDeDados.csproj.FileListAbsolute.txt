@@ -1,0 +1,15 @@
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\bin\Debug\net6.0\AcassaBancoDeDados.exe
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\bin\Debug\net6.0\AcassaBancoDeDados.deps.json
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\bin\Debug\net6.0\AcassaBancoDeDados.runtimeconfig.json
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\bin\Debug\net6.0\AcassaBancoDeDados.dll
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\bin\Debug\net6.0\AcassaBancoDeDados.pdb
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\obj\Debug\net6.0\AcassaBancoDeDados.csproj.AssemblyReference.cache
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\obj\Debug\net6.0\AcassaBancoDeDados.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\obj\Debug\net6.0\AcassaBancoDeDados.AssemblyInfoInputs.cache
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\obj\Debug\net6.0\AcassaBancoDeDados.AssemblyInfo.cs
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\obj\Debug\net6.0\AcassaBancoDeDados.csproj.CoreCompileInputs.cache
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\obj\Debug\net6.0\AcassaBancoDeDados.dll
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\obj\Debug\net6.0\refint\AcassaBancoDeDados.dll
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\obj\Debug\net6.0\AcassaBancoDeDados.pdb
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\obj\Debug\net6.0\AcassaBancoDeDados.genruntimeconfig.cache
+C:\Users\orly.junior\Documents\AcassaBancoDeDados\AcassaBancoDeDados\obj\Debug\net6.0\ref\AcassaBancoDeDados.dll
