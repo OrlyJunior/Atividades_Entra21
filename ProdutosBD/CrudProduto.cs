@@ -132,7 +132,7 @@ namespace ProdutosBD
 
         public bool deletar()
         {
-            Console.WriteLine("Insira o id da categoria que deseja deletar:");
+            Console.WriteLine("Insira o id do produto que deseja deletar:");
             int id = int.Parse(Console.ReadLine());
 
             using (SqlConnection con = new SqlConnection())
@@ -151,6 +151,41 @@ namespace ProdutosBD
 
                 SqlDataReader sr;
                 sr = sc.ExecuteReader();
+
+                return true;
+            }
+        }
+
+        public bool alterar()
+        {
+            Console.WriteLine("Insira o id do produto que deseja alterar:");
+            int id = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Insira o novo nome do produto:");
+            string nome = Console.ReadLine();
+
+            Console.WriteLine("Insira o novo valor unitário do produto:");
+            decimal valorU = decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("Insira o novo estoque do produto:");
+            int estoque = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Insira o novo id de sua categoria:");
+            int idCat = int.Parse(Console.ReadLine());
+
+            using (SqlConnection con = new SqlConnection())
+            {
+                con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Produtos;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+                SqlCommand sc = new SqlCommand();
+
+                sc.CommandType = CommandType.Text;
+
+                sc.CommandText = $"update tb_produtos set [nome] = {nome}, [valorUnitario] = {valorU}, [estoque] = {estoque}, [categoriaId] = {idCat} where tb_produtos.id = {id}";
+
+                con.Open();
+
+                sc.Connection = con;
 
                 return true;
             }

@@ -17,7 +17,7 @@
 
                 cont = false;
 
-                Console.WriteLine("Qual operação deseja realizar?\n1 - Adicionar categoria\n2 - Consultar categorias\n3 - Adicionar produto\n4 - Consultar produto\n5 - Consultar por categoria\n6 - Deletar produto");
+                Console.WriteLine("Qual operação deseja realizar?\n1 - Adicionar categoria\n2 - Consultar categorias\n3 - Adicionar produto\n4 - Consultar produto\n5 - Consultar por categoria\n6 - Deletar produto\n7 - Editar produto");
                 int op = int.Parse(Console.ReadLine());
 
                 if(op == 1)
@@ -90,6 +90,19 @@
                 if(op == 6)
                 {
                     crudP.deletar();
+
+                    Console.WriteLine("\nDeseja continuar?\n1 - Sim\n2 - Não");
+                    int cont2 = int.Parse(Console.ReadLine());
+
+                    if (cont2 == 1)
+                    {
+                        cont = true;
+                    }
+                }
+
+                if (op == 7)
+                {
+                    crudP.alterar();
 
                     Console.WriteLine("\nDeseja continuar?\n1 - Sim\n2 - Não");
                     int cont2 = int.Parse(Console.ReadLine());
