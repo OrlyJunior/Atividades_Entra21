@@ -145,9 +145,12 @@ namespace ProdutosBD
 
                 sc.CommandType = CommandType.Text;
 
-                sc.CommandText = $"delete from tb_produtos where id ={id}";
+                sc.CommandText = $"delete from tb_produtos where tb_produtos.id = {id}";
 
                 sc.Connection = con;
+
+                SqlDataReader sr;
+                sr = sc.ExecuteReader();
 
                 return true;
             }
