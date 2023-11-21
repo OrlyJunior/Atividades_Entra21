@@ -14,7 +14,8 @@ namespace AcessaBancoDeDados.Dao
         {
             using (SqlConnection con = new())
             {
-                con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Contatos;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                //Mudar string de conexão caso necessário
+                con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Contatos;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
                 SqlCommand cn = new();
 
                 cn.CommandType = CommandType.Text;
@@ -129,6 +130,28 @@ namespace AcessaBancoDeDados.Dao
             using (SqlConnection con = new())
             {
                 Console.WriteLine("Qual id deseja apagar?");
+                int id = int.Parse(Console.ReadLine());
+
+                con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Contatos;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                SqlCommand cn = new();
+
+                cn.CommandType = CommandType.Text;
+
+                cn.CommandText = $"delete from tb_contatos where Id = {id}";
+
+                con.Open();
+
+                cn.Connection = con;
+
+                return cn.ExecuteNonQuery() > 0;
+            }
+        }
+
+        public bool alterar()
+        {
+            using (SqlConnection con = new())
+            {
+                Console.WriteLine("Qual id deseja alterar?");
                 int id = int.Parse(Console.ReadLine());
 
                 con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Contatos;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
