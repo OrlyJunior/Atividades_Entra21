@@ -3,9 +3,8 @@ using System.Data.SqlClient;
 
 namespace ProdutosBD
 {
-    class CrudProduto
+    class CrudProduto : ICrud<Produto>
     {
-        
         public bool add()
         {
             Produto prod = new Produto();
@@ -91,7 +90,7 @@ namespace ProdutosBD
             return true;
         }
 
-        public bool consultarCategoria()
+        public bool consultarCategoria(List<Produto> produtos)
         {
             Console.WriteLine("Insira o id da categoria que deseja consultar:");
             int cate = int.Parse(Console.ReadLine());
@@ -189,8 +188,6 @@ namespace ProdutosBD
                 si.Parameters.Add("valorU", SqlDbType.Decimal).Value = valorU;
                 si.Parameters.Add("estoque", SqlDbType.Int).Value = estoque;
                 si.Parameters.Add("idCat", SqlDbType.Int).Value = idCat;
-
-                
 
                 si.Connection = con;
 
