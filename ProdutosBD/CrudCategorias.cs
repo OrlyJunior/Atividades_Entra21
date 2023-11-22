@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,7 +40,33 @@ namespace ProdutosBD
 
         public bool alterar()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Insira o id da categoria que deseja alterar:");
+            int catAlt = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Insira o novo nome da categoria:");
+            string nome = Console.ReadLine();
+
+            using (SqlConnection con = new())
+            {
+                con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Produtos;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+                con.Open();
+
+                SqlCommand sc = new SqlCommand();
+
+                sc.CommandType = CommandType.Text;
+
+                sc.CommandText = $"update tb_categorias set Nome = @Nome where Id = {catAlt}";
+
+                sc.Parameters.Add("Nome", SqlDbType.NChar).Value = nome;
+
+                sc.Connection = con;
+
+                SqlDataReader sr;
+                sr = sc.ExecuteReader();
+            }
+
+            return true;
         }
 
         public List<Categoria> consultar(List<Categoria> t)
@@ -128,9 +155,28 @@ namespace ProdutosBD
 
         public bool deletar()
         {
-            throw new NotImplementedException();
-        }
+            Console.WriteLine("Qual o id da categoria que deseja deletar?");
+            int id = int.Parse(Console.ReadLine());
 
-        
+            using (SqlConnection con = new())
+            {
+                con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Produtos;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+                con.Open();
+
+                SqlCommand sc = new();
+                
+                sc.CommandType = CommandType.Text;
+
+                sc.CommandText = $"delete from tb_categorias where id = {id}";
+
+                sc.Connection = con;
+
+                SqlDataReader sr;
+                sr = sc.ExecuteReader();
+            }
+
+            return true;
+        }
     }
 }

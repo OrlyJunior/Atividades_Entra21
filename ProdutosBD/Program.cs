@@ -19,8 +19,10 @@
 
                 cont = false;
 
-                Console.WriteLine("Qual operação deseja realizar?\n1 - Adicionar categoria\n2 - Consultar todas as categorias\n3 - Consultar a categoria pelo id\n4 - Deletar categoria\n5 - Adicionar produto\n6 - Consultar todos os produtos\n7 - Consultar produtos por categoria\n8 - Deletar produto\n9 - Editar produto");
+                Console.WriteLine("Qual operação deseja realizar?\n1 - Adicionar categoria\n2 - Consultar todas as categorias\n3 - Consultar a categoria pelo id\n4 - Deletar categoria\n5 - Alterar categoria\n6 - Adicionar produto\n7 - Consultar todos os produtos\n8 - Consultar produtos por categoria\n9 - Deletar produto\n10 - Editar produto");
                 int op = int.Parse(Console.ReadLine());
+
+                Console.Clear();
 
                 if(op == 1)
                 {
@@ -80,7 +82,7 @@
 
                 if (op == 5)
                 {
-                    crudP.add();
+                    crudC.alterar();
 
                     Console.WriteLine("\nDeseja continuar?\n1 - Sim\n2 - Não");
                     int cont2 = int.Parse(Console.ReadLine());
@@ -92,6 +94,19 @@
                 }
 
                 if (op == 6)
+                {
+                    crudP.add();
+
+                    Console.WriteLine("\nDeseja continuar?\n1 - Sim\n2 - Não");
+                    int cont2 = int.Parse(Console.ReadLine());
+
+                    if (cont2 == 1)
+                    {
+                        cont = true;
+                    }
+                }
+
+                if (op == 7)
                 {
                     crudP.consultar(produtos);
 
@@ -106,7 +121,7 @@
                     }
                 }
 
-                if (op == 7)
+                if (op == 8)
                 {
                     crudP.consultarCategoria(produtos);
 
@@ -121,7 +136,7 @@
                     }
                 }
 
-                if (op == 8)
+                if (op == 9)
                 {
                     crudP.deletar();
 
@@ -134,7 +149,7 @@
                     }
                 }
 
-                if (op == 9)
+                if (op == 10)
                 {
                     crudP.alterar();
 
