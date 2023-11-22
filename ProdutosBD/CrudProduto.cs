@@ -177,15 +177,25 @@ namespace ProdutosBD
             {
                 con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Produtos;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
 
-                SqlCommand sc = new SqlCommand();
-
-                sc.CommandType = CommandType.Text;
-
-                sc.CommandText = $"update tb_produtos set [nome] = {nome}, [valorUnitario] = {valorU}, [estoque] = {estoque}, [categoriaId] = {idCat} where tb_produtos.id = {id}";
-
                 con.Open();
 
-                sc.Connection = con;
+                SqlCommand si = new SqlCommand();
+
+                si.CommandType = CommandType.Text;
+
+                si.CommandText = $"UPDATE tb_produtos SET tb_produtos.nome = @nome, tb_produtos.valorUnitario = @valorU, tb_produtos.estoque = @estoque, tb_produtos.categoriaId = @idCat WHERE tb_produtos.id = {id}";
+
+                si.Parameters.Add("nome", SqlDbType.NChar).Value = nome;
+                si.Parameters.Add("valorU", SqlDbType.Decimal).Value = valorU;
+                si.Parameters.Add("estoque", SqlDbType.Int).Value = estoque;
+                si.Parameters.Add("idCat", SqlDbType.Int).Value = idCat;
+
+                
+
+                si.Connection = con;
+
+                SqlDataReader sr;
+                sr = si.ExecuteReader();
 
                 return true;
             }

@@ -4,8 +4,6 @@
     {
         static void Main(string[] args)
         {
-            List<Produto> produtos = new List<Produto>();
-
             CrudCategorias crudC = new();
             CrudProduto crudP = new();
 
@@ -35,6 +33,7 @@
 
                 if (op == 2)
                 {
+
                     crudC.consultar();
 
                     Console.WriteLine("\nDeseja continuar?\n1 - Sim\n2 - Não");
@@ -61,6 +60,8 @@
 
                 if (op == 4)
                 {
+                    List<Produto> produtos = new List<Produto>();
+
                     crudP.consultar(produtos);
 
                     crudP.mostrar(produtos);
