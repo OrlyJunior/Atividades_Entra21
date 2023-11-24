@@ -50,13 +50,14 @@ namespace ConectaMySQL
             command.CommandText = "insert into tb_produtos(nome, valorUnitario, estoque, categoriaId)values(@nome, @valorUnitario, @estoque, @categoriaId)";
 
             command.Parameters.Add("nome", MySqlDbType.VarChar).Value = nome;
-            command.Parameters.Add("valorUnitario", MySqlDbType.VarChar).Value = valU;
-            command.Parameters.Add("estoque", MySqlDbType.VarChar).Value = estoque;
-            command.Parameters.Add("categoriaId", MySqlDbType.VarChar).Value = categoria;
+            command.Parameters.Add("valorUnitario", MySqlDbType.Decimal).Value = valU;
+            command.Parameters.Add("estoque", MySqlDbType.Int32).Value = estoque;
+            command.Parameters.Add("categoriaId", MySqlDbType.Int32).Value = categoria;
 
             con.Open();
 
             command.ExecuteNonQuery();
+
             return true;
         }
     }
