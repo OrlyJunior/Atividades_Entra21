@@ -16,7 +16,7 @@ namespace ConectaMySQL
 
             try
             {
-                command.CommandText = "insert into tb_categorias(nome)values(@nome)";
+                command.CommandText = "insert into tb_categorias(nomeCategoria)values(@nome)";
 
                 command.Parameters.Add("nome", MySqlDbType.VarChar).Value = nome;
 
@@ -53,7 +53,7 @@ namespace ConectaMySQL
                     Categoria categ = new();
 
                     categ.Id = Convert.ToInt32(dr["id"]);
-                    categ.Nome = Convert.ToString(dr["nome"]);
+                    categ.Nome = Convert.ToString(dr["nomeCategoria"]);
 
                     Console.WriteLine(categ.toString());
                 }
@@ -94,7 +94,7 @@ namespace ConectaMySQL
                         Categoria categ = new();
 
                         categ.Id = Convert.ToInt32(dr["id"]);
-                        categ.Nome = Convert.ToString(dr["nome"]);
+                        categ.Nome = Convert.ToString(dr["nomeCategoria"]);
 
                         Console.WriteLine(categ.toString());
 
@@ -156,7 +156,7 @@ namespace ConectaMySQL
 
             try 
             {
-                command.CommandText = $@"update tb_categorias set nome = @nome where id = {id}";
+                command.CommandText = $@"update tb_categorias set nomeCategoria = @nome where id = {id}";
 
                 command.Parameters.Add("nome", MySqlDbType.VarChar).Value = nome;
                 con.Open();
