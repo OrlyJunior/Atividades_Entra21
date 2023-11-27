@@ -26,7 +26,7 @@
             {
                 Console.Clear();
 
-                Console.WriteLine("Que operação deseja realizar?\n1 - Ver alunos aprovados\n2 - Ver alunos reprovados\n3 - Ver alunos em ordem alfabética");
+                Console.WriteLine("Que operação deseja realizar?\n1 - Ver alunos aprovados\n2 - Ver alunos reprovados\n3 - Ver alunos em ordem alfabética\n4 - Consultar aluno pelo ID\n5 - Consultar a maior nota e a maior média\n6 - Consultar a menor nota e a menor média");
                 int op = int.Parse(Console.ReadLine());
 
                 if (op == 1)
@@ -39,12 +39,7 @@
 
                     foreach (Student i in alunos)
                     {
-                        Console.WriteLine($"Aluno: {i.NomeCompleto}");
-                        Console.WriteLine($"Nota 1: {i.Notas[0]}");
-                        Console.WriteLine($"Nota 2: {i.Notas[1]}");
-                        Console.WriteLine($"Nota 3: {i.Notas[2]}");
-                        Console.WriteLine($"Nota 4: {i.Notas[3]}");
-                        Console.WriteLine($"Méida: {i.Notas.Average()}");
+                        Console.WriteLine(i.toString());
                         Console.WriteLine("Situação: Aprovado\n\n");
                     }
 
@@ -61,12 +56,7 @@
 
                     foreach (Student i in alunos)
                     {
-                        Console.WriteLine($"Aluno: {i.NomeCompleto}");
-                        Console.WriteLine($"Nota 1: {i.Notas[0]}");
-                        Console.WriteLine($"Nota 2: {i.Notas[1]}");
-                        Console.WriteLine($"Nota 3: {i.Notas[2]}");
-                        Console.WriteLine($"Nota 4: {i.Notas[3]}");
-                        Console.WriteLine($"Méida: {i.Notas.Average()}");
+                        Console.WriteLine(i.toString());
                         Console.WriteLine("Situação: Reprovado\n\n");
                     }
 
@@ -82,13 +72,53 @@
 
                     foreach (Student i in alunos)
                     {
-                        Console.WriteLine($"Aluno: {i.NomeCompleto}");
-                        Console.WriteLine($"Nota 1: {i.Notas[0]}");
-                        Console.WriteLine($"Nota 2: {i.Notas[1]}");
-                        Console.WriteLine($"Nota 3: {i.Notas[2]}");
-                        Console.WriteLine($"Nota 4: {i.Notas[3]}");
-                        Console.WriteLine($"Méida: {i.Notas.Average()}\n\n");
+                        Console.WriteLine($"{i.toString()}\n\n");
                     }
+
+                    Console.ReadKey();
+                }
+
+                if (op == 4)
+                {
+                    Console.WriteLine("Insira o ID do aluno que deseja achar:");
+                    int id = int.Parse(Console.ReadLine());
+
+                    var aluno =
+                        from alunoP in students
+                        where alunoP.Id == id
+                        select alunoP;
+
+                    Console.WriteLine($"\n{aluno.ToList()[0].toString()}");
+
+                    Console.ReadKey();
+                }
+
+                if (op == 5)
+                {
+                    var maior =
+                        from notas in students
+                        select notas.Notas.Average();
+
+                    var maiorN =
+                        from notas in students
+                        select notas.Notas.Max();
+
+                    Console.WriteLine($"Maior média: {maior.ToList().Max()}\nMaior nota: {maiorN.ToList().Max()}");
+
+                    Console.ReadKey();
+                }
+
+                if (op == 6)
+                {
+                    var maior =
+                        from notas in students
+                        select notas.Notas.Average();
+
+                    var maiorN =
+                        from notas in students
+                        select notas.Notas.Min();
+
+                    Console.WriteLine($"Menor média: {maior.ToList().Min()}\nMenor nota: {maiorN.ToList().Min()}");
 
                     Console.ReadKey();
                 }

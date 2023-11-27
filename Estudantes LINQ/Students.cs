@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Estudantes_LINQ
+﻿namespace Estudantes_LINQ
 {
     public class Student
     {
@@ -10,7 +8,7 @@ namespace Estudantes_LINQ
 
         public string toString()
         {
-            return $"Id: {Id}\nNome: {NomeCompleto}\nNota: {Notas}";
+            return $"ID: {Id}\nAluno: {NomeCompleto}\nNota 1: {Notas[0]}\nNota 2: {Notas[1]}\nNota 3: {Notas[2]}\nNota 4: {Notas[3]}\nMédia: {Notas.Average()}";
         }
     }
-}
+}     
