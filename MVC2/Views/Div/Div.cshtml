@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MVC2.Models.Pessoa>
+@{
+    ViewData["Titulo"] = "Consulta em div";
+    ViewData["Texto"] = "Consulta de contato em div";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Titulo"]</h1>
+    <p>@ViewData["Texto"]</p>
+</div>
+
+@foreach(var i in Model)
+{
+    <div>
+        <b>@Html.DisplayNameFor(model => model.Id):</b> <label class="text-danger text-decoration-none">@Html.DisplayFor(model => i.Id)</label>
+        <p></p>
+        <b>@Html.DisplayNameFor(model => model.Nome):</b> <label class="text-danger text-decoration-none">@Html.DisplayFor(model => i.Nome)</label>
+        <p></p>
+        <b>@Html.DisplayNameFor(model => model.Email):</b> <label class="text-danger text-decoration-none">@Html.DisplayFor(model => i.Email)</label>
+        <p></p>
+    </div>
+
+    <div style="height:2px" class="w-100 bg-dark">
+
+    </div>
+}
+

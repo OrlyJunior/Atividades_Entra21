@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MVC2.Models.Pessoa>
+@{
+    ViewData["Title"] = "Teste";
+    ViewData["Texto"] = "Primeiro teste de redirecionamento de Razor Pages com MVC";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <p>@ViewData["Texto"]</p>
+</div>
+
+<div class="w-100 bg-dark">
+    <p>A</p>
+</div>
+
+<div class="w-100">
+    <p>Primeiro site MVC</p>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Id)</th>
+            
+                <th>@Html.DisplayNameFor(model => model.Nome)</th>
+           
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Pessoa p in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => p.Id)
+                    </td>
+                        <td>
+                        @Html.DisplayFor(model => p.Nome)
+                        </td>
+                    <td>
+                        @Html.DisplayFor(model => p.Email)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

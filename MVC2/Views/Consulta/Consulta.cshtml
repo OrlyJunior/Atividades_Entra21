@@ -1,0 +1,37 @@
+﻿@model MVC2.Models.Pessoa
+
+@{
+    ViewData["Title"] = "Consulta";
+    ViewData["Texto"] = "Consulta de apenas um contato em uma lista";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <p>@ViewData["Texto"]</p>
+</div>
+
+    <table class="table">
+        <thead>
+        <tr style="background-color: #b3cc57">
+                <th>@Html.DisplayNameFor(model => model.Id)</th>
+
+                <th>@Html.DisplayNameFor(model => model.Nome)</th>
+
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr style="background-color: #ecf081">
+                    <td>
+                        @Html.DisplayFor(model => model.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Email)
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
