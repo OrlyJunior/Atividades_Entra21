@@ -1,0 +1,25 @@
+﻿@model MVC3.Models.Contato
+
+<h1>Criar contato</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Criar">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="form-label">Insira o nome do contato:</label>
+                <input asp-for="Name" class="form-control"></input>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="form-label">Insira o email do contato:</label>
+                <input asp-for="Email" class="form-control"></input>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fone" class="form-label">Insira o Fone do contato:</label>
+                <input asp-for="Fone" class="form-control"></input>
+            </div>
+
+            <button asp-action="Criar" class="btn btn-primary mt-1">Criar</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+﻿@model MVC3.Models.Contato
+
+<div>
+    <h1>Detalhes</h1>
+    <h3>@Html.DisplayNameFor(model => model.Id): @Html.DisplayFor(model => model.Id)</h3>
+    <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+    <h3>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</h3>
+    <h3>@Html.DisplayNameFor(model => model.Fone): @Html.DisplayFor(model => model.Fone)</h3>
+
+    <form asp-action="Contato">
+        <button asp-action="Contato" class="btn btn-primary">Voltar</button>
+    </form>
+</div>

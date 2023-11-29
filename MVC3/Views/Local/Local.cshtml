@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MVC3.Models.Local>
+
+<div class="text-center">
+    <h1>Locais</h1>
+    <p>Consulta de locais</p>
+</div>
+
+<p>
+    <a asp-action="Criar">Criar novo local</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Rua)</th>
+            <th>@Html.DisplayNameFor(model => model.Numero)</th>
+            <th>@Html.DisplayNameFor(model => model.Bairro)</th>
+            <th>@Html.DisplayNameFor(model => model.Cidade)</th>
+            <th>@Html.DisplayNameFor(model => model.Cep)</th>
+            <th>@Html.DisplayNameFor(model => model.Estado)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => i.Id)</td>
+                <td>@Html.DisplayFor(model => i.Nome)</td>
+                <td>@Html.DisplayFor(model => i.Rua)</td>
+                <td>@Html.DisplayFor(model => i.Numero)</td>
+                <td>@Html.DisplayFor(model => i.Bairro)</td>
+                <td>@Html.DisplayFor(model => i.Cidade)</td>
+                <td>@Html.DisplayFor(model => i.Cep)</td>
+                <td>@Html.DisplayFor(model => i.Estado)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {Id = i.Id}) | 
+                    @Html.ActionLink("Details", "Details", new {Id = i.Id}) |
+                    @Html.ActionLink("Delete", "Delete", new {Id = i.Id});
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

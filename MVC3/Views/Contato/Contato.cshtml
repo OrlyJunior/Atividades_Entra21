@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MVC3.Models.Contato>;
+
+<div class="text-center">
+    <h1>Contatos</h1>
+    <p>Consulta de contatos</p>
+</div>
+
+<p>
+    <a asp-action="Criar">Criar novo contato</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Fone)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => i.Id)</td>
+                <td>@Html.DisplayFor(model => i.Name)</td>
+                <td>@Html.DisplayFor(model => i.Email)</td>
+                <td>@Html.DisplayFor(model => i.Fone)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {Id = i.Id}) |
+                    @Html.ActionLink("Details", "Details", new {Id = i.Id}) |
+                    @Html.ActionLink("Delete", "Delete", new {Id = i.Id})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
