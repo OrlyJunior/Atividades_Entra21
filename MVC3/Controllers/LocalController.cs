@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVC3.Models;
 
 namespace MVC3.Controllers
 {
@@ -24,6 +25,13 @@ namespace MVC3.Controllers
             locais.Add(local);
 
             return RedirectToAction("Local");
+        }
+
+        public IActionResult Details(Models.Local local)
+        {
+            Models.Local loca = locais.FirstOrDefault(ct => ct.Id == local.Id);
+
+            return View(loca);
         }
     }
 }
