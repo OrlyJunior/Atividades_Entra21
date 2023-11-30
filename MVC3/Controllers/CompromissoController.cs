@@ -69,5 +69,12 @@ namespace MVC3.Controllers
 
             return RedirectToAction("Compromisso");
         }
+
+        public IActionResult Details(Models.Compromisso comp)
+        {
+            Models.Compromisso compro = compromissos.FirstOrDefault(cp => cp.Id == comp.Id);
+
+            return View(compro);
+        }
     }
 }
