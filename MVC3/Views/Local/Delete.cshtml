@@ -1,0 +1,15 @@
+﻿@model MVC3.Models.Local
+
+<div>
+    <h1>Deletar o contato</h1>
+    <p>Tem certeza que deseja deletar esse local?</p>
+
+    <div class="d-flex">
+        <form asp-action="Delete" class="d-flex">
+            <button asp-action="Delete" class="btn btn-danger">Sim</button>
+        </form>
+        <form asp-action="Local" class="d-flex ms-3">
+            <button asp-action="Local" class="btn btn-success">Não</button>
+        </form>
+    </div>
+</div>

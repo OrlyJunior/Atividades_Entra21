@@ -9,73 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MVC3
 build_property.RootNamespace = MVC3
-build_property.ProjectDir = C:\Users\orly.junior\Documents\MVC3\MVC3\
+build_property.ProjectDir = C:\Users\Orly\Documents\MVCrud\MVC3\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\orly.junior\Documents\MVC3\MVC3
+build_property.MSBuildProjectDirectory = C:\Users\Orly\Documents\MVCrud\MVC3
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Compromisso/Compromisso.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Compromisso/Compromisso.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJvbWlzc29cQ29tcHJvbWlzc28uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Contato/Contato.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Contato/Contato.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDb250YXRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Contato/Criar.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Contato/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Contato/Delete.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Contato/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Contato/Details.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Contato/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Contato/Edit.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Contato/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Home/Index.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Home/Privacy.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Local/Criar.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Local/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxcQ3JpYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Local/Details.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Local/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Local/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Local/Local.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Local/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Local/Local.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxcTG9jYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Shared/Error.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/_ViewImports.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/_ViewStart.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/orly.junior/Documents/MVC3/MVC3/Views/Shared/_Layout.cshtml]
+[C:/Users/Orly/Documents/MVCrud/MVC3/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bhkzynsr5b

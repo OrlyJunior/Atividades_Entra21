@@ -1,0 +1,43 @@
+﻿@model MVC3.Models.Local
+
+<div>
+    <h1>Criar local</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="Nome" class="form-label">Insira o nome do local:</label>
+                    <input asp-for="Nome" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Rua" class="form-label">Insira a rua do local:</label>
+                    <input asp-for="Rua" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Numero" class="form-label">Insira o numero do local:</label>
+                    <input asp-for="Numero" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Bairro" class="form-label">Insira o bairro do local:</label>
+                    <input asp-for="Bairro" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cidade" class="form-label">Insira a cidade do local:</label>
+                    <input asp-for="Cidade" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cep" class="form-label">Insira o CEP do local:</label>
+                    <input asp-for="Cep" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Estado" class="form-label">Insira o estado do local:</label>
+                    <input asp-for="Estado" class="form-control"></input>
+                </div>
+
+                <button asp-action="Edit" class="btn btn-primary mt-1">Criar</button>
+            </form>
+        </div>
+    </div>
+</div>

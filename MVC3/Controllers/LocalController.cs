@@ -33,5 +33,46 @@ namespace MVC3.Controllers
 
             return View(loca);
         }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            Models.Local local = locais.FirstOrDefault(ct => ct.Id == id);
+
+            return View(local);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Models.Local loca)
+        {
+            Models.Local local = locais.FirstOrDefault(ct => ct.Id == loca.Id);
+
+            local.Nome = loca.Nome;
+            local.Rua = loca.Rua;
+            local.Numero = loca.Numero;
+            local.Bairro = loca.Bairro;
+            local.Cidade = loca.Cidade;
+            local.Estado = loca.Estado;
+            local.Cep = loca.Cep;
+
+            return RedirectToAction("Local");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            Models.Local local = locais.FirstOrDefault(ct => ct.Id == id);
+
+            return View(local);
+        }
+
+        public IActionResult Delete(Models.Local loca)
+        {
+            Models.Local local = locais.FirstOrDefault(ct => ct.Id == loca.Id);
+
+            locais.Remove(local);
+
+            return RedirectToAction("Local");
+        }
     }
 }
