@@ -1,5 +1,42 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model IEnumerable<MVC3.Models.Compromisso>;
+
+<div class="text-center">
+    <h1>Compromissos</h1>
+    <p>Consulta de compromissos</p>
+</div>
+
+<p>
+    <a asp-action="Criar">Criar novo compromisso</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Data)</th>
+            <th>@Html.DisplayNameFor(model => model.Hora)</th>
+            <th>@Html.DisplayNameFor(model => model.LocalId)</th>
+            <th>@Html.DisplayNameFor(model => model.ContatoId)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => i.Id)</td>
+                <td>@Html.DisplayFor(model => i.Data)</td>
+                <td>@Html.DisplayFor(model => i.Hora)</td>
+                <td>@Html.DisplayFor(model => i.LocalId)</td>
+                <td>@Html.DisplayFor(model => i.ContatoId)</td>
+                <td>@Html.DisplayFor(model => i.Status)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {Id = i.Id}) |
+                    @Html.ActionLink("Details", "Details", new {Id = i.Id}) |
+                    @Html.ActionLink("Delete", "Delete", new {Id = i.Id})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
