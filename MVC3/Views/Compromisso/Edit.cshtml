@@ -7,16 +7,20 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
+                <label asp-for="Descricao" class="form-label">Insira a descrição do compromisso:</label>
+                <input asp-for="Descricao" class="form-control"></input>
+            </div>
+            <div class="form-group">
                 <label asp-for="DataHora" class="form-label">Selecione o dia e hora do compromisso:</label>
                 <input asp-for="DataHora" class="form-control"></input>
             </div>
             <div class="form-group">
-                <label asp-for="LocalId" class="form-label">Insira o ID do local do compromisso:</label>
-                <input asp-for="LocalId" class="form-control"></input>
+                <label asp-for="Local.Id" class="form-label">Selecione o local do compromisso:</label>
+                <select class="form-control" asp-for="Local.Id" asp-items="@ViewBag.locais"></select>
             </div>
             <div class="form-group">
-                <label asp-for="ContatoId" class="form-label">Insira o ID do contato convidado ao compromisso:</label>
-                <input asp-for="ContatoId" class="form-control"></input>
+                <label asp-for="Contato.Id" class="form-label">Insira o contato convidado ao compromisso:</label>
+                <select class="form-control" asp-for="Contato.Id" asp-items="@ViewBag.contatos"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Status" class="form-label">Selecione o status do compromisso:</label>

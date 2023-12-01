@@ -13,6 +13,7 @@
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>Descrição</th>
             <th>@Html.DisplayNameFor(model => model.Data)</th>
             <th>@Html.DisplayNameFor(model => model.Hora)</th>
             <th>Local</th>
@@ -26,10 +27,11 @@
         {
             <tr>
                 <td>@Html.DisplayFor(model => i.Id)</td>
+                <td>@Html.DisplayFor(model => i.Descricao)</td>
                 <td>@Html.DisplayFor(model => i.Data)</td>
                 <td>@Html.DisplayFor(model => i.Hora)</td>
-                <td>@Html.DisplayFor(model => i.Local)</td>
-                <td>@Html.DisplayFor(model => i.Contato)</td>
+                <td>@Html.DisplayFor(model => i.Local.Nome)</td>
+                <td>@Html.DisplayFor(model => i.Contato.Name)</td>
                 <td>@Html.DisplayFor(model => i.Status)</td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new {Id = i.Id}) |

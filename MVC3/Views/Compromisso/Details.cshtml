@@ -5,8 +5,24 @@
     <h3>@Html.DisplayNameFor(model => model.Id): @Html.DisplayFor(model => model.Id)</h3>
     <h3>@Html.DisplayNameFor(model => model.Data): @Html.DisplayFor(model => model.Data)</h3>
     <h3>@Html.DisplayNameFor(model => model.Hora): @Html.DisplayFor(model => model.Hora)</h3>
-    <h3>Local: @Html.DisplayFor(model => model.Local)</h3>
-    <h3>Contato: @Html.DisplayFor(model => model.Contato)</h3>
+
+    <h3 class="mt-3">Local: </h3>
+    <h3>ID: @Html.DisplayFor(model => model.Local.Id)</h3>
+    <h3>Nome: @Html.DisplayFor(model => model.Local.Nome)</h3>
+    <h3>Número: @Html.DisplayFor(model => model.Local.Numero)</h3>
+    <h3>Rua: @Html.DisplayFor(model => model.Local.Rua)</h3>
+    <h3>Bairro: @Html.DisplayFor(model => model.Local.Bairro)</h3>
+    <h3>Cidade: @Html.DisplayFor(model => model.Local.Cidade)</h3>
+    <h3>Estado: @Html.DisplayFor(model => model.Local.Estado)</h3>
+    <h3>CEP: @Html.DisplayFor(model => model.Local.Cep)</h3>
+
+
+    <h3 class="mt-3">Contato: </h3>
+    <h3>@Html.DisplayFor(model => model.Contato.Id)</h3>
+    <h3>@Html.DisplayFor(model => model.Contato.Name)</h3>
+    <h3>@Html.DisplayFor(model => model.Contato.Email)</h3>
+    <h3 class="mb-3">@Html.DisplayFor(model => model.Contato.Fone)</h3>
+
     <h3>@Html.DisplayNameFor(model => model.Status): @Html.DisplayFor(model => model.Status)</h3>
 
     <form asp-action="Compromisso">

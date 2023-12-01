@@ -2,7 +2,6 @@
 {
     public class Local
     {
-        //Id, nome, rua, numero, bairro, cidade, cep e uf
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Rua { get; set; }
