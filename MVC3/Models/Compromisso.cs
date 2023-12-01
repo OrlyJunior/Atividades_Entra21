@@ -2,7 +2,6 @@
 {
     public class Compromisso
     {
-
         public int Id { get; set; }
         public DateTime DataHora { get; set; }
         public string Descricao { get; set; }

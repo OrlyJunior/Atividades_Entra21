@@ -1,13 +1,15 @@
 ﻿@model MVC3.Models.Local
 
 <h1>Detalhes</h1>
-<h3>@Html.DisplayNameFor(model => model.Id): @Html.DisplayFor(model => model.Id)</h3>
-<h3>@Html.DisplayNameFor(model => model.Nome): @Html.DisplayFor(model => model.Nome)</h3>
-<h3>@Html.DisplayNameFor(model => model.Rua): @Html.DisplayFor(model => model.Rua)</h3>
-<h3>@Html.DisplayNameFor(model => model.Numero): @Html.DisplayFor(model => model.Numero)</h3>
-<h3>@Html.DisplayNameFor(model => model.Bairro): @Html.DisplayFor(model => model.Bairro)</h3>
-<h3>@Html.DisplayNameFor(model => model.Cidade): @Html.DisplayFor(model => model.Cidade)</h3>
-<h3>@Html.DisplayNameFor(model => model.Cep): @Html.DisplayFor(model => model.Cep)</h3>
-<h3>@Html.DisplayNameFor(model => model.Estado): @Html.DisplayFor(model => model.Estado)</h3>
+<h3>ID: @Html.DisplayFor(model => model.Id)</h3>
+<h3>Nome: @Html.DisplayFor(model => model.Nome)</h3>
+<h3>Número: @Html.DisplayFor(model => model.Numero)</h3>
+<h3>Rua: @Html.DisplayFor(model => model.Rua)</h3>
+<h3>Bairro: @Html.DisplayFor(model => model.Bairro)</h3>
+<h3>Cidade: @Html.DisplayFor(model => model.Cidade)</h3>
+<h3>Estado: @Html.DisplayFor(model => model.Estado)</h3>
+<h3>CEP: @Html.DisplayFor(model => model.Cep)</h3>
 
-<button asp-action="Local">Voltar</button>
+<form asp-action="Local">
+    <button asp-action="Local" class="mt-3 btn btn-primary">Voltar</button>
+</form>
