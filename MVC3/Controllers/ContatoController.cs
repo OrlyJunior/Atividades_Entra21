@@ -5,10 +5,9 @@ namespace MVC3.Controllers
 {
     public class ContatoController : Controller
     {
-        static List<Models.Contato> contatos = new();
         public IActionResult Contato()
         {
-            return View(contatos);
+            return View(Dados.Dados.contatos);
         }
 
         [HttpGet]
@@ -20,9 +19,9 @@ namespace MVC3.Controllers
         [HttpPost]
         public IActionResult Criar(MVC3.Models.Contato contato)
         {
-            contato.Id = contatos.Count + 1;
+            contato.Id = Dados.Dados.contatos.Count + 1;
 
-            contatos.Add(contato);
+            Dados.Dados.contatos.Add(contato);
 
             return RedirectToAction("Contato");
         }
@@ -30,7 +29,7 @@ namespace MVC3.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            Models.Contato cont = contatos.FirstOrDefault(ct => ct.Id == id); 
+            Models.Contato cont = Dados.Dados.contatos.FirstOrDefault(ct => ct.Id == id); 
 
             return View(cont);
         }
@@ -38,7 +37,7 @@ namespace MVC3.Controllers
         [HttpPost]
         public IActionResult Edit(Models.Contato contato)
         {
-            Models.Contato cont = contatos.FirstOrDefault(ct => ct.Id == contato.Id);
+            Models.Contato cont = Dados.Dados.contatos.FirstOrDefault(ct => ct.Id == contato.Id);
             cont.Name = contato.Name;
             cont.Email = contato.Email;
             cont.Fone = contato.Fone;
@@ -49,7 +48,7 @@ namespace MVC3.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            Models.Contato cont = contatos.FirstOrDefault(ct => ct.Id == id);
+            Models.Contato cont = Dados.Dados.contatos.FirstOrDefault(ct => ct.Id == id);
 
             return View(cont);
         }
@@ -57,16 +56,16 @@ namespace MVC3.Controllers
         [HttpPost]
         public IActionResult Delete(Models.Contato contato)
         {
-            Models.Contato cont = contatos.FirstOrDefault(ct => ct.Id == contato.Id);
+            Models.Contato cont = Dados.Dados.contatos.FirstOrDefault(ct => ct.Id == contato.Id);
 
-            contatos.Remove(cont);
+            Dados.Dados.contatos.Remove(cont);
 
             return RedirectToAction("Contato");
         }
 
         public IActionResult Details(Models.Contato cont)
         {
-            Models.Contato contato = contatos.FirstOrDefault(ct => ct.Id == cont.Id);
+            Models.Contato contato = Dados.Dados.contatos.FirstOrDefault(ct => ct.Id == cont.Id);
 
             return View(contato);
         }
