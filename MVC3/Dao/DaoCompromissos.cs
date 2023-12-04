@@ -23,7 +23,7 @@ namespace MVC3.Dao
 
             try
             {
-                cm.CommandText = @"select * from tb_compromissos";
+                cm.CommandText = @"select tb_compromissos.id, descricao, data, contato, tb_contatos.id, nomecontato, tb_locais.id, nomelocal from tb_compromissos, tb_contatos, tb_locais";
 
                 con.Open();
 
@@ -34,13 +34,15 @@ namespace MVC3.Dao
 
                 while (dr.Read())
                 {
-                    Compromisso compromisso = new();
+                    Compromisso compromisso = new Compromisso();
 
                     compromisso.Id = Convert.ToInt32(dr["id"]);
                     compromisso.Descricao = Convert.ToString(dr["descricao"]);
                     compromisso.DataHora = Convert.ToDateTime(dr["data"]);
-                    compromisso.Contato.Id = Convert.ToInt32(dr["contato"]);
-                    compromisso.Local.Id = Convert.ToInt32(dr["local"]);
+                    compromisso.ContatoC.Id = Convert.ToInt32(dr["tb_contatos.id"]);
+                    compromisso.LocalC.Id = Convert.ToInt32(dr["tb_locais.id"]);
+                    compromisso.ContatoC.Name = Convert.ToString(dr["tb_contatos.nomecontato"]);
+                    compromisso.LocalC.Nome = Convert.ToString(dr["tb_locais.nomelocal"]);
 
                     compromissos.Add(compromisso);
                 }
@@ -82,8 +84,8 @@ namespace MVC3.Dao
 
                 cm.Parameters.Add("descricao", MySqlDbType.VarChar).Value = compromisso.Descricao;
                 cm.Parameters.Add("data", MySqlDbType.DateTime).Value = compromisso.DataHora;
-                cm.Parameters.Add("contato", MySqlDbType.Int32).Value = compromisso.Contato.Id;
-                cm.Parameters.Add("local", MySqlDbType.Int32).Value = compromisso.Local.Id;
+                cm.Parameters.Add("contato", MySqlDbType.Int32).Value = compromisso.ContatoC.Id;
+                cm.Parameters.Add("local", MySqlDbType.Int32).Value = compromisso.LocalC.Id;
 
                 cm.Connection = con;
                 cm.ExecuteNonQuery();

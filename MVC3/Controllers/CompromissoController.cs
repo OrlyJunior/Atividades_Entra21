@@ -37,6 +37,19 @@ namespace MVC3.Controllers
         {
             DaoComp.salvar(comp);
 
+            Models.Local lc = Dados.Dados.locais.FirstOrDefault(c => c.Id == comp.LocalC.Id);
+            comp.LocalC = lc;
+
+            Models.Contato ct = Dados.Dados.contatos.FirstOrDefault(c => c.Id == comp.ContatoC.Id);
+            comp.ContatoC = ct;
+
+            comp.Data = $"{Convert.ToString(comp.DataHora.Day)}/{Convert.ToString(comp.DataHora.Month)}/{Convert.ToString(comp.DataHora.Year)}";
+            comp.Hora = Convert.ToString(comp.DataHora.TimeOfDay);
+
+            
+
+            Dados.Dados.compromissos.Add(comp);
+
             return RedirectToAction("Compromisso");
         }
 
@@ -68,15 +81,15 @@ namespace MVC3.Controllers
             compro.Id = comp.Id;
             compro.Descricao = comp.Descricao;
 
-            Models.Local lc = Dados.Dados.locais.FirstOrDefault(c => c.Id == comp.Local.Id);
-            compro.Local = lc;
+            Models.Local lc = Dados.Dados.locais.FirstOrDefault(c => c.Id == comp.LocalC.Id);
+            compro.LocalC = lc;
 
             compro.Hora = comp.Hora = Convert.ToString(comp.DataHora.TimeOfDay);
             compro.Status = comp.Status;
             compro.Data = comp.Data = $"{Convert.ToString(comp.DataHora.Day)}/{Convert.ToString(comp.DataHora.Month)}/{Convert.ToString(comp.DataHora.Year)}";
 
-            Models.Contato ct = Dados.Dados.contatos.FirstOrDefault(c => c.Id == comp.Contato.Id);
-            compro.Contato = ct;
+            Models.Contato ct = Dados.Dados.contatos.FirstOrDefault(c => c.Id == comp.ContatoC.Id);
+            compro.ContatoC = ct;
 
             return RedirectToAction("Compromisso");
         }

@@ -15,12 +15,12 @@
                 <input asp-for="DataHora" class="form-control"></input>
             </div>
             <div class="form-group">
-                <label asp-for="Local.Id" class="form-label">Selecione o local do compromisso:</label>
-                <select class="form-control" asp-for="Local.Id" asp-items="@ViewBag.locais"></select>
+                <label asp-for="LocalC.Id" class="form-label">Selecione o local do compromisso:</label>
+                <select class="form-control" asp-for="LocalC.Id" asp-items="@ViewBag.locais"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Contato.Id" class="form-label">Insira o contato convidado ao compromisso:</label>
-                <select class="form-control" asp-for="Contato.Id" asp-items="@ViewBag.contatos"></select>
+                <label asp-for="ContatoC.Id" class="form-label">Insira o contato convidado ao compromisso:</label>
+                <select class="form-control" asp-for="ContatoC.Id" asp-items="@ViewBag.contatos"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Status" class="form-label">Selecione o status do compromisso:</label>

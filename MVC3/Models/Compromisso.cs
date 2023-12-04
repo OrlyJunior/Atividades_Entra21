@@ -7,8 +7,8 @@
         public string Descricao { get; set; }
         public string Data { get; set; }
         public string Hora { get; set; }
-        public Local Local { get; set; }
-        public Contato Contato { get; set; }
+        public Local LocalC = new();
+        public Contato ContatoC = new();
         public string Status { get; set; }
     }
 }
