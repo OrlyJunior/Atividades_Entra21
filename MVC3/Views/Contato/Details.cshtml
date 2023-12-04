@@ -1,13 +1,14 @@
-﻿@model MVC3.Models.Contato
+﻿@using MVC3.Dados;
+@model MVC3.Models.Contato
 
 <div>
-    <h1>Detalhes</h1>
-    <h3>ID: @Html.DisplayFor(model => model.Id)</h3>
-    <h3>Nome: @Html.DisplayFor(model => model.Name)</h3>
-    <h3>E-mail: @Html.DisplayFor(model => model.Email)</h3>
-    <h3>Fone: @Html.DisplayFor(model => model.Fone)</h3>
+     <h1>Detalhes</h1>
+     <h3>ID: @Html.DisplayFor(model => model.Id)</h3>
+     <h3>Nome: @Html.DisplayFor(model => model.Name)</h3>
+     <h3>E-mail: @Html.DisplayFor(model => model.Email)</h3>
+     <h3>Fone: @Html.DisplayFor(model => model.Fone)</h3>
 
-    <form asp-action="Contato">
-        <button asp-action="Contato" class="btn btn-primary mt-3">Voltar</button>
-    </form>
+     <form asp-action="Contato">
+        <button asp-action="Contato" class="btn btn-primary mt-3" type="submit">Voltar</button>
+     </form>
 </div>
