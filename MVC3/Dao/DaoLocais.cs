@@ -101,12 +101,16 @@ namespace MVC3.Dao
             {
                 con.Open();
 
-                cm.CommandText = @"update tb_contatos set nomelocal = @nome, rua = @rua, bairro = @bairro, cidade = @cidade, numero = @numero, CEP = @cep, uf = @estado where id = @id";
+                cm.CommandText = @"update tb_locais set nomelocal = @Nome, rua = @rua, bairro = @bairro, cidade = @cidade, numero = @numero, CEP = @cep, uf = @uf where id = @id";
 
-                cm.Parameters.Add("id", MySqlDbType.VarChar).Value = local.Id;
-                cm.Parameters.Add("nome", MySqlDbType.VarChar).Value = local.Nome;
-                cm.Parameters.Add("email", MySqlDbType.VarChar).Value = local.Email;
-                cm.Parameters.Add("fone", MySqlDbType.VarChar).Value = local.Fone;
+                cm.Parameters.Add("id", MySqlDbType.Int32).Value = local.Id;
+                cm.Parameters.Add("Nome", MySqlDbType.VarChar).Value = local.Nome;
+                cm.Parameters.Add("rua", MySqlDbType.VarChar).Value = local.Rua;
+                cm.Parameters.Add("numero", MySqlDbType.Int32).Value = local.Numero;
+                cm.Parameters.Add("bairro", MySqlDbType.VarChar).Value = local.Bairro;
+                cm.Parameters.Add("cidade", MySqlDbType.VarChar).Value = local.Cidade;
+                cm.Parameters.Add("CEP", MySqlDbType.VarChar).Value = local.Cep;
+                cm.Parameters.Add("uf", MySqlDbType.VarChar).Value = local.Estado;
 
                 cm.Connection = con;
 
@@ -124,7 +128,7 @@ namespace MVC3.Dao
             return true;
         }
 
-        public bool salvar(Local contato)
+        public bool salvar(Local local)
         {
             MySqlConnection con = new();
 
@@ -136,11 +140,15 @@ namespace MVC3.Dao
             {
                 con.Open();
 
-                cm.CommandText = @"insert into tb_contatos(nomecontato, email, fone)values(@nome, @email, @fone)";
+                cm.CommandText = @"insert into tb_locais(nomelocal, rua, numero, bairro, cidade, CEP, uf)values(@nomelocal, @rua, @numero, @bairro, @cidade, @CEP, @uf)";
 
-                cm.Parameters.Add("nome", MySqlDbType.VarChar).Value = contato.Name;
-                cm.Parameters.Add("email", MySqlDbType.VarChar).Value = contato.Email;
-                cm.Parameters.Add("fone", MySqlDbType.VarChar).Value = contato.Fone;
+                cm.Parameters.Add("nomelocal", MySqlDbType.VarChar).Value = local.Nome;
+                cm.Parameters.Add("rua", MySqlDbType.VarChar).Value = local.Rua;
+                cm.Parameters.Add("numero", MySqlDbType.Int32).Value = local.Numero;
+                cm.Parameters.Add("bairro", MySqlDbType.VarChar).Value = local.Bairro;
+                cm.Parameters.Add("cidade", MySqlDbType.VarChar).Value = local.Cidade;
+                cm.Parameters.Add("CEP", MySqlDbType.VarChar).Value = local.Cep;
+                cm.Parameters.Add("uf", MySqlDbType.VarChar).Value = local.Estado;
 
                 cm.Connection = con;
                 cm.ExecuteNonQuery();
@@ -152,7 +160,6 @@ namespace MVC3.Dao
                     con.Close();
                 }
             }
-
 
             return true;
         }

@@ -1,12 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using MVC3.Dao;
 
 namespace MVC3.Controllers
 {
     public class CompromissoController : Controller
     {
+        DaoCompromissos DaoComp = new();
         public IActionResult Compromisso()
         {
+            Dados.Dados.compromissos = DaoComp.consultar();
+
             return View(Dados.Dados.compromissos);
         }
 
@@ -31,18 +35,7 @@ namespace MVC3.Controllers
         [HttpPost]
         public IActionResult Criar(Models.Compromisso comp)
         {
-            comp.Id = Dados.Dados.compromissos.Count + 1;
-
-            Models.Local lc = Dados.Dados.locais.FirstOrDefault(c => c.Id == comp.Local.Id);
-            comp.Local = lc;
-
-            Models.Contato ct = Dados.Dados.contatos.FirstOrDefault(c => c.Id == comp.Contato.Id);
-            comp.Contato = ct;
-
-            comp.Data = $"{Convert.ToString(comp.DataHora.Day)}/{Convert.ToString(comp.DataHora.Month)}/{Convert.ToString(comp.DataHora.Year)}";
-            comp.Hora = Convert.ToString(comp.DataHora.TimeOfDay);
-
-            Dados.Dados.compromissos.Add(comp);
+            DaoComp.salvar(comp);
 
             return RedirectToAction("Compromisso");
         }

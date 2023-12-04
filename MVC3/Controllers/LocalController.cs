@@ -1,12 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVC3.Dao;
 using MVC3.Models;
 
 namespace MVC3.Controllers
 {
     public class LocalController : Controller
     {
+        DaoLocais DaoL = new();
         public IActionResult Local()
         {
+            Dados.Dados.locais = DaoL.consultar();
+
             return View(Dados.Dados.locais);
         }
 
@@ -19,9 +23,7 @@ namespace MVC3.Controllers
         [HttpPost]
         public IActionResult Criar(Models.Local local)
         {
-            local.Id = Dados.Dados.locais.Count + 1;
-
-            Dados.Dados.locais.Add(local);
+            DaoL.salvar(local);
 
             return RedirectToAction("Local");
         }
@@ -44,15 +46,7 @@ namespace MVC3.Controllers
         [HttpPost]
         public IActionResult Edit(Models.Local loca)
         {
-            Models.Local local = Dados.Dados.locais.FirstOrDefault(ct => ct.Id == loca.Id);
-
-            local.Nome = loca.Nome;
-            local.Rua = loca.Rua;
-            local.Numero = loca.Numero;
-            local.Bairro = loca.Bairro;
-            local.Cidade = loca.Cidade;
-            local.Estado = loca.Estado;
-            local.Cep = loca.Cep;
+            DaoL.editar(loca);
 
             return RedirectToAction("Local");
         }
@@ -65,13 +59,18 @@ namespace MVC3.Controllers
             return View(local);
         }
 
+        [HttpPost]
         public IActionResult Delete(Models.Local loca)
         {
-            Models.Local local = Dados.Dados.locais.FirstOrDefault(ct => ct.Id == loca.Id);
-
-            Dados.Dados.locais.Remove(local);
+            DaoL.deletar(loca);
 
             return RedirectToAction("Local");
+        }
+
+        [HttpGet]
+        public IActionResult Consultar()
+        {
+            return View();
         }
     }
 }
