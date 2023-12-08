@@ -42,8 +42,8 @@ namespace MVC3.Dao
                     local.Numero = Convert.ToInt32(dr["numero"]);
                     local.Bairro = Convert.ToString(dr["bairro"]);
                     local.Cidade = Convert.ToString(dr["cidade"]);
-                    local.Cep = Convert.ToString(dr["CEP"]);
-                    local.Estado = Convert.ToString(dr["uf"]);
+                    local.Cep = Convert.ToString(dr["cep"]);
+                    local.Estado = Convert.ToString(dr["estado"]);
 
                     locais.Add(local);
                 }
@@ -101,7 +101,7 @@ namespace MVC3.Dao
             {
                 con.Open();
 
-                cm.CommandText = @"update tb_locais set nomelocal = @Nome, rua = @rua, bairro = @bairro, cidade = @cidade, numero = @numero, CEP = @cep, uf = @uf where id = @id";
+                cm.CommandText = @"update tb_locais set nomelocal = @Nome, rua = @rua, bairro = @bairro, cidade = @cidade, numero = @numero, cep = @cep, estado = @uf where id = @id";
 
                 cm.Parameters.Add("id", MySqlDbType.Int32).Value = local.Id;
                 cm.Parameters.Add("Nome", MySqlDbType.VarChar).Value = local.Nome;
@@ -140,7 +140,7 @@ namespace MVC3.Dao
             {
                 con.Open();
 
-                cm.CommandText = @"insert into tb_locais(nomelocal, rua, numero, bairro, cidade, CEP, uf)values(@nomelocal, @rua, @numero, @bairro, @cidade, @CEP, @uf)";
+                cm.CommandText = @"insert into tb_locais(nomelocal, rua, numero, bairro, cidade, cep, estado)values(@nomelocal, @rua, @numero, @bairro, @cidade, @CEP, @uf)";
 
                 cm.Parameters.Add("nomelocal", MySqlDbType.VarChar).Value = local.Nome;
                 cm.Parameters.Add("rua", MySqlDbType.VarChar).Value = local.Rua;
