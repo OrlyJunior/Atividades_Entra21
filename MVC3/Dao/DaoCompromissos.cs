@@ -6,11 +6,6 @@ namespace MVC3.Dao
 {
     public class DaoCompromissos : ICrud<Compromisso>
     {
-        public Compromisso consultar(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Compromisso> consultar()
         {
             List<Compromisso> compromissos = new();

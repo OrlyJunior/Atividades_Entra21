@@ -103,5 +103,10 @@ namespace MVC3.Controllers
 
             return View(compro);
         }
+
+        public IActionResult Consultar()
+        {
+            return View();
+        }
     }
 }
