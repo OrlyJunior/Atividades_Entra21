@@ -79,14 +79,71 @@ namespace MVC3.Dao
             return compromissos;
         }
 
-        public void deletar(Compromisso t)
+        public void deletar(Compromisso compromisso)
         {
-            throw new NotImplementedException();
+            MySqlConnection con = new();
+
+            con.ConnectionString = Dados.Conexao.conecta();
+
+            MySqlCommand cm = con.CreateCommand();
+
+            try
+            {
+                con.Open();
+
+                cm.CommandText = @"delete from tb_compromissos where id = @id";
+
+                cm.Parameters.Add("id", MySqlDbType.VarChar).Value = compromisso.Id;
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
         }
 
-        public bool editar(Compromisso t)
+        public bool editar(Compromisso compromisso)
         {
-            throw new NotImplementedException();
+            MySqlConnection con = new();
+
+            con.ConnectionString = Dados.Conexao.conecta();
+
+            MySqlCommand cm = con.CreateCommand();
+
+            try
+            {
+                con.Open();
+
+                cm.CommandText = @"update tb_compromissos set descricao = @descricao, data = @data, localId = @local, contatoId = @contato, status = @status where id = @id";
+
+                cm.Parameters.Add("id", MySqlDbType.VarChar).Value = compromisso.Id;
+                cm.Parameters.Add("descricao", MySqlDbType.VarChar).Value = compromisso.Descricao;
+                cm.Parameters.Add("data", MySqlDbType.DateTime).Value = compromisso.DataHora;
+                cm.Parameters.Add("contato", MySqlDbType.Int32).Value = compromisso.ContatoC.Id;
+                cm.Parameters.Add("local", MySqlDbType.Int32).Value = compromisso.LocalC.Id;
+                cm.Parameters.Add("status", MySqlDbType.VarChar).Value = compromisso.Status;
+
+                cm.Connection = con;
+
+                MySqlDataReader dr;
+                dr = cm.ExecuteReader();
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+            return true;
         }
 
         public bool salvar(Compromisso compromisso)

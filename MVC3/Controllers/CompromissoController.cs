@@ -76,20 +76,7 @@ namespace MVC3.Controllers
         [HttpPost]
         public IActionResult Edit(Models.Compromisso comp)
         {
-            Models.Compromisso compro = Dados.Dados.compromissos.FirstOrDefault(cp => cp.Id == comp.Id);
-
-            compro.Id = comp.Id;
-            compro.Descricao = comp.Descricao;
-
-            Models.Local lc = Dados.Dados.locais.FirstOrDefault(c => c.Id == comp.LocalC.Id);
-            compro.LocalC = lc;
-
-            compro.Hora = comp.Hora = Convert.ToString(comp.DataHora.TimeOfDay);
-            compro.Status = comp.Status;
-            compro.Data = comp.Data = $"{Convert.ToString(comp.DataHora.Day)}/{Convert.ToString(comp.DataHora.Month)}/{Convert.ToString(comp.DataHora.Year)}";
-
-            Models.Contato ct = Dados.Dados.contatos.FirstOrDefault(c => c.Id == comp.ContatoC.Id);
-            compro.ContatoC = ct;
+            DaoComp.editar(comp);
 
             return RedirectToAction("Compromisso");
         }
@@ -105,9 +92,7 @@ namespace MVC3.Controllers
         [HttpPost]
         public IActionResult Delete(Models.Compromisso comp)
         {
-            Models.Compromisso compro = Dados.Dados.compromissos.FirstOrDefault(cp => cp.Id == comp.Id);
-
-            Dados.Dados.compromissos.Remove(compro);
+            DaoComp.deletar(comp);
 
             return RedirectToAction("Compromisso");
         }
