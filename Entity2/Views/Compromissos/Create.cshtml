@@ -1,0 +1,53 @@
+﻿@model Entity2.Models.Compromisso
+@using Entity2.Data;
+@using Entity2.Migrations;
+@using Entity2.Controllers;
+@using Entity2.Data;
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Compromisso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContatoId" class="control-label">Escolha o contato:</label>
+                <select asp-for="ContatoId" asp-items="@ViewBag.contatos" class="form-control"></select>
+                <span asp-validation-for="ContatoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocalId" class="control-label">Escolha o local:</label>
+                <select asp-for="LocalId" asp-items="@ViewBag.locais" class="form-control"></select>
+                <span asp-validation-for="LocalId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dia" class="control-label"></label>
+                <input asp-for="Dia" class="form-control" />
+                <span asp-validation-for="Dia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
