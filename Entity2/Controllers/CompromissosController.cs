@@ -36,10 +36,10 @@ namespace Entity2.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             var compromisso = await _context.Compromisso.FirstOrDefaultAsync(m => m.Id == id);
-                compromisso.Local = await _context.Local.FirstOrDefaultAsync(l => l.Id == compromisso.LocalId);
-                compromisso.Contato = await _context.Contato.FirstOrDefaultAsync(l => l.Id == compromisso.ContatoId);
-            
 
+            compromisso.Local = await _context.Local.FirstOrDefaultAsync(l => l.Id == compromisso.LocalId);
+            compromisso.Contato = await _context.Contato.FirstOrDefaultAsync(l => l.Id == compromisso.ContatoId);
+            
             return View(compromisso);
         }
 
@@ -140,6 +140,9 @@ namespace Entity2.Controllers
             }
 
             var compromisso = await _context.Compromisso.FirstOrDefaultAsync(m => m.Id == id);
+
+            compromisso.Local = await _context.Local.FirstOrDefaultAsync(l => l.Id == compromisso.LocalId);
+            compromisso.Contato = await _context.Contato.FirstOrDefaultAsync(l => l.Id == compromisso.ContatoId);
 
             if (compromisso == null)
             {
