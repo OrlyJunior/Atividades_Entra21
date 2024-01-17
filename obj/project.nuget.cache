@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "pwMFsyvsCVyGP76jVe7xpCwutI/OVNRzMoxKcapm/z29+cMZAaxVpfYRKmKyGKQYCgMvCeg5ojbMydi0gaplOg==",
+  "dgSpecHash": "nA3rb3ZmShzF5TfvhcnhkPFvsklPGPZCn29CdNXGXZbMXZSR0wmxZL8/g+zOr20Tvdqig6EtRmIsYDI2f0A3Dw==",
   "success": true,
   "projectFilePath": "C:\\Users\\orly.junior\\Documents\\API\\API 2.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\orly.junior\\.nuget\\packages\\canducci.pagination\\3.0.0\\canducci.pagination.3.0.0.nupkg.sha512",
     "C:\\Users\\orly.junior\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\orly.junior\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\orly.junior\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

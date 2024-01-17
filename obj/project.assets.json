@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Canducci.Pagination/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Canducci.Pagination.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Canducci.Pagination.dll": {}
+        }
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -2512,6 +2521,22 @@
     }
   },
   "libraries": {
+    "Canducci.Pagination/3.0.0": {
+      "sha512": "LyA03M+lB1VOPRW/dXOzNdw8TQA5E/zGxDUYnYVyiVNSU5OOnadqzAUWKXkcoy6wWG3wM1QPXK2JRLw/VHYpWg==",
+      "type": "package",
+      "path": "canducci.pagination/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "canducci.pagination.3.0.0.nupkg.sha512",
+        "canducci.pagination.nuspec",
+        "ico.png",
+        "lib/net461/Canducci.Pagination.dll",
+        "lib/netstandard1.6/Canducci.Pagination.dll",
+        "lib/netstandard2.0/Canducci.Pagination.dll",
+        "lib/netstandard2.1/Canducci.Pagination.dll"
+      ]
+    },
     "Humanizer/2.14.1": {
       "sha512": "/FUTD3cEceAAmJSCPN9+J+VhGwmL/C12jvwlyM1DFXShEMsBzvLzLqSrJ2rb+k/W2znKw7JyflZgZpyE+tI7lA==",
       "type": "package",
@@ -7076,6 +7101,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Canducci.Pagination >= 3.0.0",
       "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter >= 8.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.1",
       "Microsoft.EntityFrameworkCore.InMemory >= 8.0.1",
@@ -7123,6 +7149,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Canducci.Pagination": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
           "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
             "target": "Package",
             "version": "[8.0.0, )"

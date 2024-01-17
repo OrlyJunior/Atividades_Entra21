@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API_2.Context;
 using API_2.Models;
+using Canducci.Pagination;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace API_2.Controllers
 {
@@ -21,18 +23,22 @@ namespace API_2.Controllers
             _context = context;
         }
 
-        // GET: api/Produtos
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Produto>>> GetProdutos()
+        [HttpGet("pages")]
+        public async Task<ActionResult<IEnumerable<Produto>>> GetPageContatos(
+             int página,
+             int tamanho
+            )
         {
-            List<Produto> produtos = new List<Produto>();
-
-            produtos = await _context.Produtos.ToListAsync();
-
-            foreach (var i in produtos)
+            if(página != 1)
             {
-                i.Category = await _context.Categorias.FirstOrDefaultAsync(ct => ct.Id == i.CategoriaId);
+                página = (página * 5) - 5;
             }
+            else 
+            {
+                página = 0;
+            }
+
+            List<Produto> produtos = await _context.Produtos.AsNoTracking().Skip(página).Take(tamanho).ToListAsync();
 
             return produtos;
         }
@@ -145,11 +151,19 @@ namespace API_2.Controllers
             return produtos;
         }
 
+        [HttpGet("page/{page?}")]
+        public async Task<IActionResult> GetSourcePaginated(int? page)
+        {
+            page ??= 1;
+            if (page <= 0) page = 1;
+
+            var result = await _context.Produtos.AsNoTracking().OrderBy(c => c.Id).ToPaginatedRestAsync(page.Value, 5);
+            return Ok(result);
+        }
         private int ContaLetrasIguais(string palavra1, string palavra2)
         {
             return palavra1.Zip(palavra2, (c1, c2) => c1 == c2 ? 1 : 0).Sum();
         }
-
         private bool ProdutoExists(int id)
         {
             return _context.Produtos.Any(e => e.Id == id);

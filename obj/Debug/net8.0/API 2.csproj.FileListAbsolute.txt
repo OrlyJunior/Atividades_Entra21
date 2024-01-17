@@ -465,3 +465,4 @@ C:\Users\orly.junior\Documents\API\obj\Debug\net8.0\refint\API 2.dll
 C:\Users\orly.junior\Documents\API\obj\Debug\net8.0\API 2.pdb
 C:\Users\orly.junior\Documents\API\obj\Debug\net8.0\API 2.genruntimeconfig.cache
 C:\Users\orly.junior\Documents\API\obj\Debug\net8.0\ref\API 2.dll
+C:\Users\orly.junior\Documents\API\bin\Debug\net8.0\Canducci.Pagination.dll
