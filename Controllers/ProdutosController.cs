@@ -31,14 +31,21 @@ namespace API_2.Controllers
         {
             if(página != 1)
             {
-                página = (página * 5) - 5;
+                página = (página * tamanho) - tamanho;
             }
             else 
             {
                 página = 0;
             }
 
+            
+
             List<Produto> produtos = await _context.Produtos.AsNoTracking().Skip(página).Take(tamanho).ToListAsync();
+
+            foreach (var produto in produtos)
+            {
+                produto.Category = await _context.Categorias.FirstOrDefaultAsync(ct => ct.Id == produto.CategoriaId);
+            }
 
             return produtos;
         }
@@ -96,9 +103,6 @@ namespace API_2.Controllers
         [HttpPost]
         public async Task<ActionResult<Produto>> PostProduto(Produto produto)
         {
-            produto.Category = await _context.Categorias.FirstOrDefaultAsync(ct => ct.Id == produto.Category.Id);
-            produto.CategoriaId = produto.Category.Id;
-
             _context.Produtos.Add(produto);
             await _context.SaveChangesAsync();
 
