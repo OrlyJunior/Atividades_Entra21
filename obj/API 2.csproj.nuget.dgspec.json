@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\orly.junior\\source\\repos\\API 2\\API 2.csproj": {}
+    "C:\\Users\\orly.junior\\Documents\\API\\API 2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\orly.junior\\source\\repos\\API 2\\API 2.csproj": {
+    "C:\\Users\\orly.junior\\Documents\\API\\API 2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orly.junior\\source\\repos\\API 2\\API 2.csproj",
+        "projectUniqueName": "C:\\Users\\orly.junior\\Documents\\API\\API 2.csproj",
         "projectName": "API 2",
-        "projectPath": "C:\\Users\\orly.junior\\source\\repos\\API 2\\API 2.csproj",
+        "projectPath": "C:\\Users\\orly.junior\\Documents\\API\\API 2.csproj",
         "packagesPath": "C:\\Users\\orly.junior\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orly.junior\\source\\repos\\API 2\\obj\\",
+        "outputPath": "C:\\Users\\orly.junior\\Documents\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\orly.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",

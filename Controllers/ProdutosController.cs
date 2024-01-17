@@ -130,6 +130,26 @@ namespace API_2.Controllers
             return produtos;
         }
 
+        [HttpGet("/api/[controller]/pesquisaDesc{desc}\"")]
+        public async Task<ActionResult<IEnumerable<Produto>>> GetProdutosDesc(string desc)
+        {
+            List<Produto> produtos = new List<Produto>();
+
+            produtos = _context.Produtos.Where(produto => ContaLetrasIguais(desc.ToLower(), produto.Nome.ToLower()) >= 3).ToList();
+            
+            foreach (var i in produtos)
+            {
+                i.Category = await _context.Categorias.FirstOrDefaultAsync(ct => ct.Id == i.CategoriaId);
+            }
+
+            return produtos;
+        }
+
+        private int ContaLetrasIguais(string palavra1, string palavra2)
+        {
+            return palavra1.Zip(palavra2, (c1, c2) => c1 == c2 ? 1 : 0).Sum();
+        }
+
         private bool ProdutoExists(int id)
         {
             return _context.Produtos.Any(e => e.Id == id);

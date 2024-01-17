@@ -100,6 +100,18 @@ namespace API_2.Controllers
             return NoContent();
         }
 
+        [HttpGet("/api/[controller]/pesquisaDesc{desc}\"")]
+        public async Task<ActionResult<IEnumerable<Categoria>>> GetCategoriasDesc(string desc)
+        {
+            List<Categoria> categorias = _context.Categorias.Where(categoria => ContaLetrasIguais(categoria.Nome.ToLower(), desc.ToLower()) >= 3).ToList();
+
+            return categorias;
+        }
+
+        private int ContaLetrasIguais(string palavra1, string palavra2)
+        {
+            return palavra1.Zip(palavra2, (c1, c2) => c1 == c2 ? 1 : 0).Sum();
+        }
         private bool CategoriaExists(int id)
         {
             return _context.Categorias.Any(e => e.Id == id);
