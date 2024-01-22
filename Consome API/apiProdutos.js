@@ -1,11 +1,3 @@
-var listaCategorias;
-
-async function getCategorias2(){
-    await fetch("https://localhost:7254/api/Categorias")
-    .then(data => data.json())
-    .then(item => listaCategorias = item);
-}
-
 async function getProdutos(){
     document.getElementsByTagName("tbody")[1].innerHTML = "";
 
@@ -25,39 +17,26 @@ async function getProdutos(){
 }
 
 async function postProdutos(){
-    getCategorias2();
-
     var update = {
         nome: document.getElementById("inputNome").value,
         preco: document.getElementById("inputPreco").value,
         estoque: document.getElementById("inputEstoque").value,
-        categoriaId: document.getElementById("inputCategoriaId").value
+        category: {
+            id: document.getElementById("inputCategoriaId").value
+        }
     }
 
     const options = {
         method: 'post',
         headers: {
-            'Content-Type': 'application/json',
+            'content-type': 'application/json',
         },
         body: JSON.stringify(update)
     }
 
     await fetch("https://localhost:7254/api/Produtos/Post", options)
-    .then(data => {
-        return data.json();
-    })
-    .then(produto => {
-        nome: update.nome;
-        preco: update.preco;
-        estoque: update.estoque;
-        category: {
-            id: update.categoriaId;
-        }
-    })
-    .catch(e => 
-        console.log(e))
 
-        getProdutos();
+    getProdutos();
 }
 
 async function deletarProdutos(id){
@@ -82,7 +61,7 @@ async function editProdutos(id2){
         nome: document.getElementById("inputNomeE").value,
         preco: document.getElementById("inputPrecoE").value,
         estoque: document.getElementById("inputEstoqueE").value,
-        categoriaId: document.getElementById("inputCategoriaIdE")
+        categoriaId: document.getElementById("inputCategoriaIdE").value
     }
 
     var update = {
@@ -102,20 +81,5 @@ async function editProdutos(id2){
         },
         body: JSON.stringify(update)
     })
-    .then(data => {
-        return data.json();
-    })
-    .then(produto => {
-        {
-            id: update.id;
-            nome: update.nome;
-            preco: update.preco;
-            estoque: update.estoque;
-            category: {
-                id: update.category.id;
-            }
-        }
-    })
-
     getProdutos();
 }
