@@ -1,0 +1,102 @@
+<h1>Categorias</h1>
+
+<button onclick="getCategorias()">Consultar</button>
+
+<hr>
+
+<input type="text" id="input1">
+
+<button onclick="postCategorias()">Inserir</button>
+
+<hr>
+
+<input type="text" id="editado" disabled="true">
+
+<button onclick="editCategorias(this.value)" id="confirma">Editar</button>
+
+<hr>
+
+<table id="tabela">
+    <thead>
+    <th>ID</th>
+    <th>Nome</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<hr>
+
+<h1>Produtos</h1>
+
+<button onclick="getProdutos()">Consultar</button>
+
+<hr>
+
+<div style="display: block; margin-bottom: 4px;">
+    <label for="inputNome">Nome</label>
+    <input type="text" id="inputNome">
+</div>
+
+<div style="display: block; margin-bottom: 4px;">
+    <label for="">Preço</label>
+    <input type="number" id="inputPreco">
+</div>
+
+<div style="display: block; margin-bottom: 4px;">
+    <label for="">Estoque</label>
+    <input type="number" id="inputEstoque">
+</div>
+
+<div style="display: block;">
+    <label for="">Categoria</label>
+    <input type="number" id="inputCategoriaId">
+</div>
+
+    <button onclick="postProdutos()">Inserir</button>
+<hr>
+
+<hr>
+
+<div style="display: block; margin-bottom: 4px;">
+    <label for="inputNomeE" >Nome</label>
+    <input type="text" id="inputNomeE" disabled="true">
+</div>
+
+<div style="display: block; margin-bottom: 4px;">
+    <label for="">Preço</label>
+    <input type="number" id="inputPrecoE" disabled="true">
+</div>
+
+<div style="display: block; margin-bottom: 4px;">
+    <label for="">Estoque</label>
+    <input type="number" id="inputEstoqueE" disabled="true">
+</div>
+
+<div style="display: block;">
+    <label for="">Categoria</label>
+    <input type="number" id="inputCategoriaIdE" disabled="true">
+</div>
+
+<button onclick="editProdutos(this.value)" id="confirmaP">Editar</button>
+
+<hr>
+
+<table id="tabela2">
+    <thead>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Preço</th>
+    <th>Estoque</th>
+    <th>Categoria</th>
+    <th></th>
+    <th></th>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<script src="apiCategorias.js"></script>
+<script src="apiProdutos.js"></script>
