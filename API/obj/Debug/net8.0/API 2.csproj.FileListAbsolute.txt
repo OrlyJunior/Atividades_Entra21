@@ -942,3 +942,18 @@ C:\Users\orly.junior\Documents\Atividade API\API\obj\Debug\net8.0\refint\API 2.d
 C:\Users\orly.junior\Documents\Atividade API\API\obj\Debug\net8.0\API 2.pdb
 C:\Users\orly.junior\Documents\Atividade API\API\obj\Debug\net8.0\API 2.genruntimeconfig.cache
 C:\Users\orly.junior\Documents\Atividade API\API\obj\Debug\net8.0\ref\API 2.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\orly.junior\Documents\Atividade API\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

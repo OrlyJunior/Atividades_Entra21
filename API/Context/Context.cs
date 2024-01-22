@@ -13,5 +13,7 @@ namespace API_2.Context
 
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<User> Usuarios { get; set; }
+
     }
 }
