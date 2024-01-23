@@ -1,4 +1,5 @@
 ﻿using API_2.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,8 @@ namespace API_2.Controllers
         // GET: api/Categorias
         [HttpGet]
         [EnableCors]
+        [Authorize(Roles = "Funcionário,Gerente")]
+
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategorias()
         {
             return await _context.Categorias.ToListAsync();
@@ -28,6 +31,7 @@ namespace API_2.Controllers
         // GET: api/Categorias/5
         [HttpGet("{id}")]
         [EnableCors]
+        [Authorize(Roles = "Funcionário,Gerente")]
         public async Task<ActionResult<Categoria>> GetCategoria(int id)
         {
             var categoria = await _context.Categorias.FindAsync(id);
@@ -42,7 +46,8 @@ namespace API_2.Controllers
 
         // PUT: api/Categorias/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("/api/[controller]/Put/{id}")]
+        [HttpPut("/api/[controller]/{id}")]
+        [Authorize(Roles = "Gerente")]
         public async Task<IActionResult> PutCategoria(int id, Categoria categoria)
         {
             if (id != categoria.Id)
@@ -71,7 +76,8 @@ namespace API_2.Controllers
             return NoContent();
         }
 
-        [HttpPost("/api/[controller]/Post")]
+        [HttpPost("/api/[controller]")]
+        [Authorize(Roles = "Funcionário")]
         public async Task<ActionResult<Categoria>> PostCategoria(Categoria categoria)
         {
             _context.Categorias.Add(categoria);
@@ -80,7 +86,8 @@ namespace API_2.Controllers
             return CreatedAtAction("GetCategoria", new { id = categoria.Id }, categoria);
         }
 
-        [HttpDelete("/api/[controller]/Delete/{id}")]
+        [HttpDelete("/api/[controller]/{id}")]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> DeleteCategoria(int id)
         {
             var categoria = await _context.Categorias.FindAsync(id);
@@ -95,7 +102,8 @@ namespace API_2.Controllers
             return NoContent();
         }
 
-        [HttpGet("/api/[controller]/pesquisaDesc{desc}\"")]
+        [HttpGet("/api/[controller]/{desc}")]
+        [Authorize(Roles = "Funcionário,Gerente")]
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategoriasDesc(string desc)
         {
             List<Categoria> categorias = _context.Categorias.Where(categoria => ContaLetrasIguais(categoria.Nome.ToLower(), desc.ToLower()) >= 3).ToList();

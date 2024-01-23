@@ -9,11 +9,13 @@ using API_2.Context;
 using API_2.Models;
 using API_2.Dtos;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Cors;
 
 namespace API_2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors]
     public class UsersController : ControllerBase
     {
         private readonly Context.Context _context;
@@ -77,7 +79,8 @@ namespace API_2.Controllers
 
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("/api/[controller]")]
+        [EnableCors]
         public async Task<ActionResult<User>> PostUser(User user)
         {
             _context.Usuarios.Add(user);

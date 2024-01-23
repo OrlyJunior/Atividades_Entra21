@@ -1,9 +1,19 @@
+var token = localStorage.getItem("item")
+
 var lista;
 
 async function getCategorias(){
     document.getElementsByTagName("tbody")[0].innerHTML = "";
 
-    await fetch("https://localhost:7254/api/Categorias")
+    let token = localStorage.getItem("token") && "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFzZCIsInJvbGUiOiJGdW5jaW9uw6FyaW8iLCJuYmYiOjE3MDYwMzk2ODcsImV4cCI6MTcwNjA0Njg4NywiaWF0IjoxNzA2MDM5Njg3fQ.vXjQSybBX9SRHJ8L85g78osGp82Gaz5W0pjxvuIdz9I";
+
+    const options = {
+        headers: {
+            'Authorization': 'Bearer' + token
+        }
+    }
+
+    await fetch("https://localhost:7254/api/Categorias", options)
     .then(data => data.json())
     .then(item => item.forEach(element =>
         document.getElementsByTagName("tbody")[0].insertAdjacentHTML("beforeend", `<tr>
@@ -14,7 +24,7 @@ async function getCategorias(){
                                                                            </tr>`))
     );
 }
-    
+
 async function postCategorias(){
 var update = {
     nome: document.getElementById("input1").value
@@ -23,12 +33,13 @@ var update = {
 const options = {
     method: 'post',
     headers: {
-        'Content-Type': 'application/json',
+        'Authorization': 'Bearer' + token,
+        'Content-Type': 'application/json'
     },
     body: JSON.stringify(update)
 }
 
-    await fetch("https://localhost:7254/api/Categorias/Post", options)
+    await fetch("https://localhost:7254/api/Categorias", options)
     .then(data => {
         if(!data.ok){
             throw Error("Erro");
@@ -46,9 +57,14 @@ const options = {
 }
 
 async function deletarCategorias(id){
-    await fetch(`https://localhost:7254/api/Categorias/Delete/${id}`, {
-        method: "delete"
-    });
+    const options = {
+        method: "delete",
+        headers: {
+            'Authorization': 'Bearer' + token
+        }
+    }
+
+    await fetch(`https://localhost:7254/api/Categorias/${id}`, options);
 
     getCategorias();
 }
@@ -67,9 +83,10 @@ var editado = document.getElementById("editado").value;
         nome: editado
     }
 
-    await fetch(`https://localhost:7254/api/Categorias/Put/${id2}`, {
+    await fetch(`https://localhost:7254/api/Categorias/${id2}`, {
         method: "put",
         headers: {
+            'Authorization': 'Bearer' + token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(update)

@@ -10,6 +10,7 @@ using API_2.Models;
 using Canducci.Pagination;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API_2.Controllers
 {
@@ -25,7 +26,8 @@ namespace API_2.Controllers
             _context = context;
         }
 
-        [HttpGet("/api/[controller]/Get")]
+        [HttpGet]
+        [Authorize(Roles = "Funcionário,Gerente")]
         public async Task<ActionResult<IEnumerable<Produto>>> GetProduto()
         {
             List<Produto> produtos = await _context.Produtos.ToListAsync();
@@ -39,6 +41,7 @@ namespace API_2.Controllers
         }
 
         [HttpGet("/api/[controller]/Pages")]
+        [Authorize(Roles = "Funcionário,Gerente")]
         public async Task<ActionResult<IEnumerable<Produto>>> GetPageProdutos(int página, int tamanho)
         {
             if(página != 1)
@@ -61,7 +64,8 @@ namespace API_2.Controllers
         }
 
         // GET: api/Produtos/5
-        [HttpGet("/api/[controller]/GetId{id}")]
+        [HttpGet("/api/[controller]/{id}")]
+        [Authorize(Roles = "Funcionário,Gerente")]
         public async Task<ActionResult<Produto>> GetProduto(int id)
         {
             var produto = await _context.Produtos.FindAsync(id);
@@ -78,7 +82,8 @@ namespace API_2.Controllers
 
         // PUT: api/Produtos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut(("/api/[controller]/Put{id}"))]
+        [HttpPut("/api/[controller]/{id}")]
+        [Authorize(Roles = "Gerente")]
         public async Task<IActionResult> PutProduto(int id, Produto produto)
         {
             if (id != produto.Id)
@@ -110,7 +115,8 @@ namespace API_2.Controllers
             return NoContent();
         }
 
-        [HttpPost("/api/[controller]/Post")]
+        [HttpPost("/api/[controller]")]
+        [Authorize(Roles = "Funcionário")]
         public async Task<ActionResult<Produto>> PostProduto(Produto produto)
         {
             _context.Produtos.Add(produto);
@@ -120,7 +126,8 @@ namespace API_2.Controllers
         }
 
         // DELETE: api/Produtos/5
-        [HttpDelete("/api/[controller]/Delete{id}")]
+        [HttpDelete("/api/[controller]/{id}")]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> DeleteProduto(int id)
         {
             var produto = await _context.Produtos.FindAsync(id);
@@ -135,7 +142,8 @@ namespace API_2.Controllers
             return NoContent();
         }
 
-        [HttpGet("/api/[controller]/GetCategoria{categoriaId}")]
+        [HttpGet("/api/[controller]/{categoriaId}")]
+        [Authorize(Roles = "Funcionário,Gerente")]
         public async Task<ActionResult<IEnumerable<Produto>>> GetProdutosCategoria(int categoriaId)
         {
             List<Produto> produtos = new List<Produto>();
@@ -150,7 +158,8 @@ namespace API_2.Controllers
             return produtos;
         }
 
-        [HttpGet("/api/[controller]/pesquisaDesc{desc}")]
+        [HttpGet("/api/[controller]/{desc}")]
+        [Authorize(Roles = "Funcionário,Gerente")]
         public async Task<ActionResult<IEnumerable<Produto>>> GetProdutosDesc(string desc)
         {
             List<Produto> produtos = new List<Produto>();

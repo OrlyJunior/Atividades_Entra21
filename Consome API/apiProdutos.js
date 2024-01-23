@@ -1,7 +1,15 @@
+var token = localStorage.getItem("token");
+
 async function getProdutos(){
     document.getElementsByTagName("tbody")[1].innerHTML = "";
 
-    await fetch("https://localhost:7254/api/Produtos/Get")
+    const options = {
+        headers: {
+            'Authorization': 'Bearer' + token
+        }
+    }
+
+    await fetch("https://localhost:7254/api/Produtos", options)
     .then(data => data.json())
     .then(item => item.forEach(element =>
         document.getElementsByTagName("tbody")[1].insertAdjacentHTML("beforeend", `<tr>
@@ -29,20 +37,26 @@ async function postProdutos(){
     const options = {
         method: 'post',
         headers: {
-            'content-type': 'application/json',
+            'Authorization': 'Bearer' + token,
+            'content-type': 'application/json'
         },
         body: JSON.stringify(update)
     }
 
-    await fetch("https://localhost:7254/api/Produtos/Post", options)
+    await fetch("https://localhost:7254/api/Produtos", options)
 
     getProdutos();
 }
 
 async function deletarProdutos(id){
-    await fetch(`https://localhost:7254/api/Produtos/Delete${id}`, {
-        method: "delete"
-    });
+    const options = {
+        method: 'delete',
+        headers: {
+            'Authorization': 'Bearer' + token,
+        }
+    }
+
+    await fetch(`https://localhost:7254/api/Produtos/${id}`, options);
 
     getProdutos();
 }
@@ -74,9 +88,10 @@ async function editProdutos(id2){
         }
     }
 
-    await fetch(`https://localhost:7254/api/Produtos/Put${id2}`, {
+    await fetch(`https://localhost:7254/api/Produtos/${id2}`, {
         method: "put",
         headers: {
+            'Authorization': 'Bearer' + token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(update)
