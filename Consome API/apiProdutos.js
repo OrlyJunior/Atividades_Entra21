@@ -1,11 +1,11 @@
-var token = localStorage.getItem("token");
-
 async function getProdutos(){
-    document.getElementsByTagName("tbody")[1].innerHTML = "";
+    var token = localStorage.getItem("token");
+
+    document.getElementsByTagName("tbody")[0].innerHTML = "";
 
     const options = {
         headers: {
-            'Authorization': 'Bearer' + token
+            'Authorization': 'Bearer ' + token
         }
     }
 
@@ -25,6 +25,8 @@ async function getProdutos(){
 }
 
 async function postProdutos(){
+    var token = localStorage.getItem("token");
+
     var update = {
         nome: document.getElementById("inputNome").value,
         preco: document.getElementById("inputPreco").value,
@@ -37,7 +39,7 @@ async function postProdutos(){
     const options = {
         method: 'post',
         headers: {
-            'Authorization': 'Bearer' + token,
+            'Authorization': 'Bearer ' + token,
             'content-type': 'application/json'
         },
         body: JSON.stringify(update)
@@ -49,10 +51,12 @@ async function postProdutos(){
 }
 
 async function deletarProdutos(id){
+    var token = localStorage.getItem("token");
+
     const options = {
         method: 'delete',
         headers: {
-            'Authorization': 'Bearer' + token,
+            'Authorization': 'Bearer ' + token,
         }
     }
 
@@ -71,6 +75,8 @@ async function editarProdutos(id){
 }
 
 async function editProdutos(id2){
+    var token = localStorage.getItem("token");
+
     var editado = {
         nome: document.getElementById("inputNomeE").value,
         preco: document.getElementById("inputPrecoE").value,
@@ -91,7 +97,7 @@ async function editProdutos(id2){
     await fetch(`https://localhost:7254/api/Produtos/${id2}`, {
         method: "put",
         headers: {
-            'Authorization': 'Bearer' + token,
+            'Authorization': 'Bearer ' + token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(update)

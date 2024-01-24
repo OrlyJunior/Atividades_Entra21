@@ -27,7 +27,7 @@ namespace API_2.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Funcionário,Gerente")]
+        [Authorize(Roles = "Funcionário,Gerente,Administrador")]
         public async Task<ActionResult<IEnumerable<Produto>>> GetProduto()
         {
             List<Produto> produtos = await _context.Produtos.ToListAsync();

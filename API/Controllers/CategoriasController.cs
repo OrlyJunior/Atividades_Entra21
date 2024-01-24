@@ -21,7 +21,7 @@ namespace API_2.Controllers
         // GET: api/Categorias
         [HttpGet]
         [EnableCors]
-        [Authorize(Roles = "Funcionário,Gerente")]
+        [Authorize(Roles = "Funcionário,Gerente,Administrador")]
 
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategorias()
         {
@@ -103,7 +103,7 @@ namespace API_2.Controllers
         }
 
         [HttpGet("/api/[controller]/{desc}")]
-        [Authorize(Roles = "Funcionário,Gerente")]
+        [Authorize(Roles = "Funcionário,Gerente,Administrador")]
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategoriasDesc(string desc)
         {
             List<Categoria> categorias = _context.Categorias.Where(categoria => ContaLetrasIguais(categoria.Nome.ToLower(), desc.ToLower()) >= 3).ToList();

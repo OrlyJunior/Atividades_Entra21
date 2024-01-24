@@ -1,15 +1,14 @@
-var token = localStorage.getItem("item")
 
 var lista;
 
 async function getCategorias(){
-    document.getElementsByTagName("tbody")[0].innerHTML = "";
+    var token = localStorage.getItem("token");
 
-    let token = localStorage.getItem("token") && "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFzZCIsInJvbGUiOiJGdW5jaW9uw6FyaW8iLCJuYmYiOjE3MDYwMzk2ODcsImV4cCI6MTcwNjA0Njg4NywiaWF0IjoxNzA2MDM5Njg3fQ.vXjQSybBX9SRHJ8L85g78osGp82Gaz5W0pjxvuIdz9I";
+    document.getElementsByTagName("tbody")[0].innerHTML = "";
 
     const options = {
         headers: {
-            'Authorization': 'Bearer' + token
+            'Authorization': 'Bearer ' + token
         }
     }
 
@@ -26,6 +25,8 @@ async function getCategorias(){
 }
 
 async function postCategorias(){
+    var token = localStorage.getItem("token");
+
 var update = {
     nome: document.getElementById("input1").value
 }
@@ -33,7 +34,7 @@ var update = {
 const options = {
     method: 'post',
     headers: {
-        'Authorization': 'Bearer' + token,
+        'Authorization': 'Bearer ' + token,
         'Content-Type': 'application/json'
     },
     body: JSON.stringify(update)
@@ -57,10 +58,12 @@ const options = {
 }
 
 async function deletarCategorias(id){
+    var token = localStorage.getItem("token");
+
     const options = {
         method: "delete",
         headers: {
-            'Authorization': 'Bearer' + token
+            'Authorization': 'Bearer ' + token
         }
     }
 
@@ -76,6 +79,8 @@ async function editarCategorias(id){
 }
 
 async function editCategorias(id2){
+    var token = localStorage.getItem("token");
+
 var editado = document.getElementById("editado").value;
 
     var update = {
@@ -86,7 +91,7 @@ var editado = document.getElementById("editado").value;
     await fetch(`https://localhost:7254/api/Categorias/${id2}`, {
         method: "put",
         headers: {
-            'Authorization': 'Bearer' + token,
+            'Authorization': 'Bearer ' + token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(update)

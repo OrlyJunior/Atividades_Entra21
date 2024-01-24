@@ -1,11 +1,11 @@
 async function getUsuarios(){
-    document.getElementsByTagName("tbody")[2].innerHTML = "";
+    document.getElementsByTagName("tbody")[0].innerHTML = "";
 
     await fetch("https://localhost:7254/api/Users")
     .then(data =>
         data.json())
     .then(item => item.forEach(element => 
-        document.getElementsByTagName("tbody")[2].insertAdjacentHTML("beforeend", `<tr>
+        document.getElementsByTagName("tbody")[0].insertAdjacentHTML("beforeend", `<tr>
                                                                               <td>${element.id}</td>  
                                                                               <td>${element.nome}</td>
                                                                               <td>${element.role}</td>
