@@ -81,7 +81,7 @@ async function editarCategorias(id){
 async function editCategorias(id2){
     var token = localStorage.getItem("token");
 
-var editado = document.getElementById("editado").value;
+    var editado = document.getElementById("editado").value;
 
     var update = {
         id: id2,
