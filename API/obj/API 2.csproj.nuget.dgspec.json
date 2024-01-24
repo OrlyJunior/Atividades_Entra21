@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Orly\\Documents\\Consome API\\API\\API 2.csproj": {}
+    "C:\\Users\\orly.junior\\Documents\\Atividade\\API\\API 2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Orly\\Documents\\Consome API\\API\\API 2.csproj": {
+    "C:\\Users\\orly.junior\\Documents\\Atividade\\API\\API 2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Orly\\Documents\\Consome API\\API\\API 2.csproj",
+        "projectUniqueName": "C:\\Users\\orly.junior\\Documents\\Atividade\\API\\API 2.csproj",
         "projectName": "API 2",
-        "projectPath": "C:\\Users\\Orly\\Documents\\Consome API\\API\\API 2.csproj",
-        "packagesPath": "C:\\Users\\Orly\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Orly\\Documents\\Consome API\\API\\obj\\",
+        "projectPath": "C:\\Users\\orly.junior\\Documents\\Atividade\\API\\API 2.csproj",
+        "packagesPath": "C:\\Users\\orly.junior\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\orly.junior\\Documents\\Atividade\\API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Orly\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\orly.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
