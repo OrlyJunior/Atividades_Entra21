@@ -1,4 +1,4 @@
-async function getProdutos(){
+async function getProdutos() {
     var token = localStorage.getItem("token");
 
     document.getElementsByTagName("tbody")[0].innerHTML = "";
@@ -10,9 +10,9 @@ async function getProdutos(){
     }
 
     await fetch("https://localhost:7254/api/Produtos", options)
-    .then(data => data.json())
-    .then(item => item.forEach(element =>
-        document.getElementsByTagName("tbody")[1].insertAdjacentHTML("beforeend", `<tr>
+        .then(data => data.json())
+        .then(item => item.forEach(element =>
+            document.getElementsByTagName("tbody")[1].insertAdjacentHTML("beforeend", `<tr>
                                                                               <td>${element.id}</td>  
                                                                               <td>${element.nome}</td>
                                                                               <td>${element.preco}</td>
@@ -21,10 +21,10 @@ async function getProdutos(){
                                                                               <td><button value=${element.id} onclick="deletarProdutos(this.value)">Deletar</button></td>
                                                                               <td><button value=${element.id} onclick="editarProdutos(this.value)">Editar</button></td>
                                                                            </tr>`))
-    );
+        );
 }
 
-async function postProdutos(){
+async function postProdutos() {
     var token = localStorage.getItem("token");
 
     var update = {
@@ -50,7 +50,7 @@ async function postProdutos(){
     getProdutos();
 }
 
-async function deletarProdutos(id){
+async function deletarProdutos(id) {
     var token = localStorage.getItem("token");
 
     const options = {
@@ -65,16 +65,17 @@ async function deletarProdutos(id){
     getProdutos();
 }
 
-async function editarProdutos(id){
+async function editarProdutos(id) {
     document.getElementById("confirmaP").value = id;
 
+    document.getElementById("confirmaP").removeAttribute("disabled");
     document.getElementById("inputNomeE").removeAttribute("disabled");
     document.getElementById("inputPrecoE").removeAttribute("disabled");
     document.getElementById("inputEstoqueE").removeAttribute("disabled");
     document.getElementById("inputCategoriaIdE").removeAttribute("disabled");
 }
 
-async function editProdutos(id2){
+async function editProdutos(id2) {
     var token = localStorage.getItem("token");
 
     var editado = {
@@ -102,5 +103,12 @@ async function editProdutos(id2){
         },
         body: JSON.stringify(update)
     })
+
+    document.getElementById("confirmaP").setAttribute("disabled", "true");
+    document.getElementById("inputNomeE").setAttribute("disabled", "true");
+    document.getElementById("inputPrecoE").setAttribute("disabled", "true");
+    document.getElementById("inputEstoqueE").setAttribute("disabled", "true");
+    document.getElementById("inputCategoriaIdE").setAttribute("disabled", "true");
+
     getProdutos();
 }
