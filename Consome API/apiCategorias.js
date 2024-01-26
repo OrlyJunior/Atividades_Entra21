@@ -18,8 +18,8 @@ async function getCategorias() {
             document.getElementsByTagName("tbody")[0].insertAdjacentHTML("beforeend", `<tr>
                                                                               <td>${element.id}</td>  
                                                                               <td>${element.nome}<td>
-                                                                              <td><button value=${element.id} onclick="deletarCategorias(this.value)">Deletar</button></td>
-                                                                              <td><button value=${element.id} onclick="editarCategorias(this.value)">Editar</button></td>
+                                                                              <td><button value=${element.id} class="btn btn-primary" onclick="deletarCategorias(this.value)">Deletar</button></td>
+                                                                              <td><button value=${element.id} class="btn btn-primary" onclick="editarCategorias(this.value)">Editar</button></td>
                                                                            </tr>`))
         );
 }

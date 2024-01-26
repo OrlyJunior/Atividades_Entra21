@@ -9,8 +9,8 @@ async function getUsuarios() {
                                                                               <td>${element.id}</td>  
                                                                               <td>${element.nome}</td>
                                                                               <td>${element.role}</td>
-                                                                              <td><button value=${element.id} onclick="deletarUsuarios(this.value)">Deletar</button></td>
-                                                                              <td><button value=${element.id} onclick="editarUsuarios(this.value)">Editar</button></td>
+                                                                              <td><button value=${element.id} class="btn btn-primary" onclick="deletarUsuarios(this.value)">Deletar</button></td>
+                                                                              <td><button value=${element.id} class="btn btn-primary" onclick="editarUsuarios(this.value)">Editar</button></td>
                                                                            </tr>`)))
 }
 
@@ -49,8 +49,13 @@ async function postUsuarios() {
 }
 
 async function deletarUsuarios(id) {
+    var token = localStorage.getItem("token");
+
     var options = {
-        method: "delete"
+        method: "delete",
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
     }
 
     await fetch(`https://localhost:7254/api/Users/${id}`, options)

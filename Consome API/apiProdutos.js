@@ -12,14 +12,14 @@ async function getProdutos() {
     await fetch("https://localhost:7254/api/Produtos", options)
         .then(data => data.json())
         .then(item => item.forEach(element =>
-            document.getElementsByTagName("tbody")[1].insertAdjacentHTML("beforeend", `<tr>
+            document.getElementsByTagName("tbody")[0].insertAdjacentHTML("beforeend", `<tr>
                                                                               <td>${element.id}</td>  
                                                                               <td>${element.nome}</td>
                                                                               <td>${element.preco}</td>
                                                                               <td>${element.estoque}</td>
                                                                               <td>${element.category.nome}</td>
-                                                                              <td><button value=${element.id} onclick="deletarProdutos(this.value)">Deletar</button></td>
-                                                                              <td><button value=${element.id} onclick="editarProdutos(this.value)">Editar</button></td>
+                                                                              <td><button value=${element.id} class="btn btn-primary" onclick="deletarProdutos(this.value)">Deletar</button></td>
+                                                                              <td><button value=${element.id} class="btn btn-primary" onclick="editarProdutos(this.value)">Editar</button></td>
                                                                            </tr>`))
         );
 }

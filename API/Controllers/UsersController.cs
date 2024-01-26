@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API_2.Context;
+using API_2.Dao;
 using API_2.Models;
+using API_2.Listas;
 using API_2.Dtos;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API_2.Controllers
 {
@@ -18,6 +21,8 @@ namespace API_2.Controllers
     [EnableCors]
     public class UsersController : ControllerBase
     {
+        public DaoUsers daoU = new();
+
         private readonly Context.Context _context;
 
         public UsersController(Context.Context context)
@@ -29,19 +34,16 @@ namespace API_2.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsuarios()
         {
-            return await _context.Usuarios.ToListAsync();
+            Listas.Listas.listaUsuarios = daoU.consultar();
+
+            return Listas.Listas.listaUsuarios;
         }
 
         // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
-            var user = await _context.Usuarios.FindAsync(id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
+            var user = Listas.Listas.listaUsuarios.FirstOrDefault(us => us.Id == id);
 
             return user;
         }
@@ -49,30 +51,12 @@ namespace API_2.Controllers
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
-            if (id != user.Id)
-            {
-                return BadRequest();
-            }
+            daoU.consultar();
 
-            _context.Entry(user).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            daoU.alterar(user);
 
             return NoContent();
         }
@@ -83,8 +67,9 @@ namespace API_2.Controllers
         [EnableCors]
         public async Task<ActionResult<User>> PostUser(User user)
         {
-            _context.Usuarios.Add(user);
-            await _context.SaveChangesAsync();
+            daoU.consultar();
+
+            daoU.inserir(user);
 
             return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
@@ -94,8 +79,7 @@ namespace API_2.Controllers
         {
             string token = "";
 
-            var usuarios = await _context.Usuarios.ToListAsync();
-            var logado = (from usuar in usuarios where usuar.Senha == user.Senha & usuar.Nome == user.Nome select usuar).ToList();
+            var logado = (from usuar in daoU.consultar() where usuar.Senha == user.Senha & usuar.Nome == user.Nome select usuar).ToList();
 
             if (!logado.IsNullOrEmpty())
             {
@@ -105,18 +89,13 @@ namespace API_2.Controllers
             return new { token = token };
         }
 
-        // DELETE: api/Users/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-            var user = await _context.Usuarios.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
+            daoU.consultar();
 
-            _context.Usuarios.Remove(user);
-            await _context.SaveChangesAsync();
+            daoU.deletar(id);
 
             return NoContent();
         }
